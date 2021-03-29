@@ -22,6 +22,11 @@
             }
           }
 
+          .description h2{
+            font-size: 18px;
+        }
+
+
       }
       .right {
         width: 100%;
@@ -35,15 +40,16 @@
             align-items: center;
 
             h3 {
-                position: absolute;
-                top: 7%;
-                right: 25%;
-                text-transform: none;
+               display: none;
                 }
                     
             form {
                 width: 50%;
                 height: 60%;
+                
+                label{
+                    font-size: 12px;
+                }
             }           
           }
        }
@@ -89,8 +95,8 @@
                 }
 
             img{
-                height: 100px;
-                width: 100px;
+                height: 80px;
+                width: 80px;
                 position: absolute;
                 top: 10px;
             }
@@ -99,6 +105,10 @@
                 width: 100%;
                 height:100%;
                 background-color: #fff;
+                
+                label{
+                    font-size: 12px;
+                }
             }           
           }
        }
