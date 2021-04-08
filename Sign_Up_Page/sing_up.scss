@@ -110,6 +110,7 @@ body{
                 font-size: 24px;
                 letter-spacing: 2px;
                 margin-bottom: 30px;
+                font-family: 'Lobster', cursive;
             }
 
             form{
@@ -158,7 +159,7 @@ body{
                     transition: all 0.5s linear;
     
                     &:hover{
-                        background-color: #dadada;
+                        background-color: #fff;
                         color: #000;
                     }
                 }
