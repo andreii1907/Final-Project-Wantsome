@@ -44,8 +44,7 @@
               }
                   
           form {
-              width: 50%;
-              height: 50%;
+              height: 70%;
               
               label{
                   font-size: 16px;
@@ -106,6 +105,10 @@
                 
                 label{
                     font-size: 12px;
+                }
+
+                #eye {
+                  margin-top: 5px;
                 }
             }           
           }
@@ -171,6 +174,10 @@
                 
                 label{
                     font-size: 10px;
+                }
+
+                #eye {
+                  margin-top: 5px;
                 }
 
                 button{
