@@ -9,6 +9,7 @@ function mailValidation(email) {
         emailError.style.color = 'lightgreen';
         labelEmail.appendChild(emailError);
         console.log('valid email!')
+        return true;
     } else {
         emailError.textContent = 'Invalid Email Address. Please try again.';
         emailError.style.color = 'red';
