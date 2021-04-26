@@ -9,6 +9,7 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title> Sign Up USPA</title>
     <link rel="stylesheet" type="text/css" href="sing_up.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
     <link rel="preconnect" href="https://fonts.gstatic.com">
@@ -22,14 +23,14 @@
                 <p>#LIVEAUTHENTICALLY</p>
                 <h2>U.S. Polo Assn.</h2>
                 <p>Create an account to have more interactive experience with us on our web page.</p>
-                <button type="button">Shop Now!</button>
+                <a href="../Main_Page/index.html"><button type="button">Shop Now!</button></a>
             </div>
         </section>
         <section class="right">
-            <div class="sign-in">
+            <div class="sign-up">
                 <img src="https://www.alkout.com/wp-content/uploads/2018/02/Artboard-1-100-20.jpg">
                 <h3>Sign Up</h3>
-                <form method="GET">
+                <form id="form" method="POST">
                   <div class="label-container">
                     <label for="fname"> First Name
                       <input type="text" name="fname" id="fname" required placeholder="John">
@@ -37,26 +38,35 @@
                     <label for="lname"> Last Name
                       <input type="text" name="lname" id="lname" required placeholder="Locke">
                     </label>
-                    <label for="email"> Email Address
+                    <label for="email" id="label-email"> Email Address
                       <input type="text" name="email" id="email" required placeholder="example@yahoo/gmail.com">
                     </label>
-                    <label for="password"> Password
-                      <input type="password" name="password" id="password" placeholder="*****" required>
-                    </label>
-                    <label for="city"> City
-                      <input type="text" name="city" id="city" required placeholder="New York">
+                    <label for="password" id="label-password"> Password
+                      <input type="password" name="password" id="password" placeholder="********" required>
+                      <i class="fa fa-eye" id="eye"></i>
                     </label>
                     <label for="country"> Country
-                      <input type="text" name="country" id="country" required placeholder="United State of America">
+                      <select id="country" name="country">
+                        <option value="" selected >Choose your country</option>
+                      </select>
+                    </label>
+                    <label for="state"> State
+                      <select name="state" id="state">
+                        <option value="" selected>Choose the state from your country</option>
+                      </select>
                     </label>
                   </div>
-                    <button type="submit">Sign Up</button>
+                    <button type="button" id="submit">Sign Up</button>
                     <a href="../Sign_In_Page/login.html">You already have an account? Click here to Sign In page!</a>
                 </form>
             </div>
         </section>
     </div>
+    <script src="script.js" type="text/javascript"></script>
   </body>
 </html>
-  </body>
-</html>
+
+
+
+
+
