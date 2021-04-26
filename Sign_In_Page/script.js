@@ -6,7 +6,7 @@ function mailValidation(email) {
     const validSyntax = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
     if (validSyntax.test(email)) {
         emailError.textContent = 'Email address validated!';
-        emailError.style.color = 'lightgreen';
+        emailError.style.color = 'green';
         labelEmail.appendChild(emailError);
         console.log('valid email!')
         return true;
@@ -35,4 +35,13 @@ eye.addEventListener('click', function(event) {
     password.setAttribute('type', type);
 })
 
+const submit = document.getElementById('submit');
 
+submit.addEventListener('click', function(event){
+    event.preventDefault();
+    if (mailValidation(email.value) == true && password.value !== '') {
+        window.location.href = "../Main_Page/index.html";
+    } else {
+        alert('Something is wrong! Email address or password is  wrong! Please try again!');
+    }
+})
