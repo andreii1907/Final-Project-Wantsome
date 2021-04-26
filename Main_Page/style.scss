@@ -1,3 +1,5 @@
+@import 'mixins';
+
 * {
     box-sizing: border-box;
 }
@@ -15,7 +17,7 @@ header {
     background-color: #fff;
     margin: 0 35px;
     position: sticky;
-    top: 0;
+    top: 0; 
 
     nav {
         margin: 0 30px;
@@ -34,4 +36,114 @@ header {
         height: 100px;
     }
 }
+
+#main-background {
+    height: 100vh;
+    margin: 0 35px;
+    background-image: url(https://mir-s3-cdn-cf.behance.net/project_modules/max_1200/a9ae0721718851.56306a18d6be9.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    @include display();
+    position: relative;
+
+    .middle-main-background{
+        height: 30%;
+        width: 30%;
+        @include display();
+        position: absolute;
+        top: 400px;
+
+        &::after{
+            @include after();
+        }
+        
+        p {
+            margin: 0;
+            color: #fff;
+            text-align: center;
+            z-index: 3;;
+            margin-top: 10px;
+            font-size: 18px;
+        }
+
+        button {
+            margin-top: 30px;
+            @include btn();
+            z-index: 3;
+            transition: all 0.3s linear;
+
+            &:hover {
+                @include btn-hover();
+            }
+        }
+    }
+}
+
+#suggested-part {
+    height: 70vh;
+    margin: 0 35px;
+    @include display();
+    flex-direction: row;
+    justify-content: space-evenly;
+    
+    
+    .cards{
+        height: 80%;
+        flex-basis: 20%;
+        @include display();
+        position: relative;
+        background-color: #fff;
+
+        &::after{
+            @include after();
+            opacity: 0.3;
+            transition: opacity 0.5s linear;
+        }
+
+        &:hover::after{
+            opacity: 0;
+        }
+
+        
+
+        .card-btn {
+           @include btn();
+           position: absolute;
+           bottom: 30px;
+           transition: all 0.3s linear;
+           z-index: 3;
+
+            &:hover{
+                @include btn-hover();
+                font-weight: 700;
+                // color: #000;
+            }
+
+        }
+    }
+
+    .cards:nth-of-type(1){
+        background-image: url(https://assets.myntassets.com/h_1440,q_100,w_1080/v1/assets/images/2365438/2018/2/9/11518160260566-US-Polo-Assn-Men-Navy-Blue-Solid-Polo-Collar-T-shirt-5831518160260384-1.jpg);
+        @include background-sets();
+    }
+
+    .cards:nth-of-type(2) {
+        background-image: url(https://5.imimg.com/data5/TJ/YS/GLADMIN-57831385/u-s-polo-assn-navy-blue-solid-regular-fit-polo-t-shirt-500x500.png);
+        @include background-sets(); 
+    }
+
+    .cards:nth-of-type(3) {
+        background-image: url(https://cdn.shopify.com/s/files/1/0014/6217/3742/products/11304488-DRGY_1_d5ebb692-107e-4223-b6fe-b52b76ca93cc_3000x.jpg?v=1608042706);
+        @include background-sets(); 
+    }
+
+    .cards:nth-of-type(4) {
+        background-image: url(https://cdn16.nnnow.com/web-images/medium/styles/7VLSOMZ3GCQ/1531735274271/1.jpg);
+        @include background-sets(); 
+    }
+}
+
+
+
 
