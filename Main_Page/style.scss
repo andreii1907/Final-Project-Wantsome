@@ -18,6 +18,7 @@ header {
     margin: 0 35px;
     position: sticky;
     top: 0; 
+    z-index: 3;
 
     nav {
         margin: 0 30px;
@@ -27,13 +28,14 @@ header {
             text-decoration: none;
             color: #000;
             font-weight: 700;
-            font-family: 'Roboto', sans-serif;;
+            font-family: 'Roboto', sans-serif;
         }
     }
 
     img {
-        width: 100px;
-        height: 100px;
+        width: 6%;
+        height: 6%;
+        margin-right: 70px;
     }
 }
 
@@ -43,7 +45,7 @@ header {
     background-image: url(https://mir-s3-cdn-cf.behance.net/project_modules/max_1200/a9ae0721718851.56306a18d6be9.jpg);
     background-repeat: no-repeat;
     background-size: cover;
-    background-position: center;
+    background-position: center top;
     @include display();
     position: relative;
 
@@ -52,7 +54,8 @@ header {
         width: 30%;
         @include display();
         position: absolute;
-        top: 400px;
+        top: 60%;
+        font-family: 'Lobster', cursive;
 
         &::after{
             @include after();
@@ -62,16 +65,17 @@ header {
             margin: 0;
             color: #fff;
             text-align: center;
-            z-index: 3;;
+            z-index: 2;
             margin-top: 10px;
-            font-size: 18px;
+            font-size: 20px;
         }
 
         button {
             margin-top: 30px;
             @include btn();
-            z-index: 3;
+            z-index: 2;
             transition: all 0.3s linear;
+            font-family: 'Lobster', cursive;
 
             &:hover {
                 @include btn-hover();
@@ -80,48 +84,68 @@ header {
     }
 }
 
-#suggested-part {
-    height: 70vh;
+#suggestions-men, #suggestions-women {
+    background-color: #fff;
     margin: 0 35px;
-    @include display();
-    flex-direction: row;
-    justify-content: space-evenly;
-    
-    
-    .cards{
-        height: 80%;
-        flex-basis: 20%;
-        @include display();
-        position: relative;
-        background-color: #fff;
-
-        &::after{
-            @include after();
-            opacity: 0.3;
-            transition: opacity 0.5s linear;
-        }
-
-        &:hover::after{
-            opacity: 0;
-        }
-
-        
-
-        .card-btn {
-           @include btn();
-           position: absolute;
-           bottom: 30px;
-           transition: all 0.3s linear;
-           z-index: 3;
-
-            &:hover{
-                @include btn-hover();
-                font-weight: 700;
-                // color: #000;
-            }
-
-        }
+    padding-top: 45px;
+    h2 {
+        margin: 0;
+        text-align: center;
+        font-family: 'Roboto', sans-serif;
+        font-style: italic;
     }
+
+    .suggested-articles {
+        height: 70vh;
+        @include display();
+        flex-direction: row;
+        justify-content: space-evenly;
+        
+        
+        .cards{
+            height: 85%;
+            flex-basis: 20%;
+            @include display();
+            position: relative;
+            background-color: #fff;
+
+            &::after{
+                @include after();
+                opacity: 0.2;
+                border-radius: 10px;
+                transition: opacity 0.5s linear;
+            }
+    
+            &:hover::after{
+                opacity: 0;
+            }
+    
+            
+    
+            .card-btn {
+               @include btn();
+               position: absolute;
+               bottom: 30px;
+               transition: all 0.3s linear;
+               font-family: 'Lobster', cursive;
+               z-index: 1;
+    
+                &:hover{
+                    @include btn-hover();
+                    font-weight: 700;
+                
+                    &::after{
+                        @include after();
+                        z-index: -1;
+                        opacity: 0.6;
+                    }
+                }
+    
+            }
+        }
+}
+
+
 
     .cards:nth-of-type(1){
         background-image: url(https://assets.myntassets.com/h_1440,q_100,w_1080/v1/assets/images/2365438/2018/2/9/11518160260566-US-Polo-Assn-Men-Navy-Blue-Solid-Polo-Collar-T-shirt-5831518160260384-1.jpg);
@@ -139,11 +163,69 @@ header {
     }
 
     .cards:nth-of-type(4) {
-        background-image: url(https://cdn16.nnnow.com/web-images/medium/styles/7VLSOMZ3GCQ/1531735274271/1.jpg);
+        background-image: url(https://cdn.shopify.com/s/files/1/0014/6217/3742/products/11A2230W-MRFL--10435_1600x.jpg?v=1617031589);
         @include background-sets(); 
     }
 }
 
+.suggestions-women{
+    
+    padding: 0;
 
+    .cards:nth-of-type(1){
+        background-image: url(https://rukminim1.flixcart.com/image/714/857/jnj7iq80/t-shirt/z/c/c/s-uwts0734-u-s-polo-assn-original-imafa73ampygpa9y.jpeg?q=50);
+    }
+
+    .cards:nth-of-type(2) {
+        background-image: url(https://cdn.shopify.com/s/files/1/0014/6217/3742/products/21359000-HGRY_1_1200x.jpg?v=1576529891);
+    }
+
+    .cards:nth-of-type(3) {
+        background-image: url(https://cdn.shopify.com/s/files/1/0014/6217/3742/products/214916ZH-OPWH_1_1200x.jpg?v=1570024487);
+    }
+
+    .cards:nth-of-type(4) {
+        background-image: url(https://cdn.shopify.com/s/files/1/0014/6217/3742/products/215186ZH-EVBL--5608_1200x.jpg?v=1600361327);
+    }
+}
+
+
+#membership-section {
+    margin: 0 35px;
+    background-color: #fff;
+    @include display();
+
+    img{
+       width: 10%;
+       height: 10%;
+    }
+
+    #join-part, #p-part {
+        text-align: center;
+        font-family: 'Roboto', sans-serif;
+        width: 40%;
+        font-weight: 700;
+    }
+
+    #anchor-tags{
+        display: flex;
+        flex-direction: row;
+        justify-content: space-evenly;
+        margin-top: 20px;
+        width: 10%;
+
+        a {
+            text-decoration: none;
+            color: #000;
+            font-size: 18px;
+            font-family: 'Roboto', sans-serif;
+            font-weight: 700;
+
+            &:hover {
+                transform: scale(1.1);
+            }
+        }
+    }
+}
 
 
