@@ -1,3 +1,5 @@
+@import 'fonts';
+
 @mixin display {
     display: flex;
     flex-direction: column;
@@ -13,6 +15,7 @@
     border: 1px solid #fff;
     background-color: transparent;
     color: #fff;
+    font-family: $second-font;
 }
 
 @mixin after {
@@ -24,6 +27,7 @@
     left: 0;
     background-color: black;
     opacity: 0.3;
+    border-radius: 10px;
 }
 
 @mixin btn-hover {
@@ -35,4 +39,16 @@
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;    
+}
+
+@mixin card-background {
+    width: 100%;
+    height: 70%;
+    background-size: 100%;
+    background-repeat: no-repeat;
+}
+
+@mixin background-margin-all {
+    margin: 0 35px;
+    background-color: #fff;
 }

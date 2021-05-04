@@ -1,4 +1,5 @@
 @import 'mixins';
+@import 'fonts';
 
 * {
     box-sizing: border-box;
@@ -14,8 +15,7 @@ header {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    background-color: #fff;
-    margin: 0 35px;
+    @include background-margin-all();
     position: sticky;
     top: 0; 
     z-index: 3;
@@ -28,7 +28,7 @@ header {
             text-decoration: none;
             color: #000;
             font-weight: 700;
-            font-family: 'Roboto', sans-serif;
+            font-family: $primary-font;
         }
     }
 
@@ -41,7 +41,7 @@ header {
 
 #main-background {
     height: 100vh;
-    margin: 0 35px;
+    @include background-margin-all();
     background-image: url(https://mir-s3-cdn-cf.behance.net/project_modules/max_1200/a9ae0721718851.56306a18d6be9.jpg);
     background-repeat: no-repeat;
     background-size: cover;
@@ -55,7 +55,7 @@ header {
         @include display();
         position: absolute;
         top: 60%;
-        font-family: 'Lobster', cursive;
+        font-family: $second-font;
 
         &::after{
             @include after();
@@ -75,7 +75,6 @@ header {
             @include btn();
             z-index: 2;
             transition: all 0.3s linear;
-            font-family: 'Lobster', cursive;
 
             &:hover {
                 @include btn-hover();
@@ -85,13 +84,12 @@ header {
 }
 
 #suggestions-men, #suggestions-women {
-    background-color: #fff;
-    margin: 0 35px;
+    @include background-margin-all();
     padding-top: 45px;
     h2 {
         margin: 0;
         text-align: center;
-        font-family: 'Roboto', sans-serif;
+        font-family: $primary-font;
         font-style: italic;
     }
 
@@ -127,7 +125,6 @@ header {
                position: absolute;
                bottom: 30px;
                transition: all 0.3s linear;
-               font-family: 'Lobster', cursive;
                z-index: 1;
     
                 &:hover{
@@ -168,7 +165,7 @@ header {
     }
 }
 
-.suggestions-women{
+#suggestions-women{
     
     padding: 0;
 
@@ -191,8 +188,8 @@ header {
 
 
 #membership-section {
-    margin: 0 35px;
-    background-color: #fff;
+    @include background-margin-all();
+    border-bottom: 1px solid rgba(0, 0, 0, 0.301);
     @include display();
 
     img{
@@ -202,23 +199,24 @@ header {
 
     #join-part, #p-part {
         text-align: center;
-        font-family: 'Roboto', sans-serif;
+        font-family: $primary-font;
         width: 40%;
         font-weight: 700;
+        padding: 0 20px;
     }
 
     #anchor-tags{
         display: flex;
         flex-direction: row;
         justify-content: space-evenly;
-        margin-top: 20px;
+        margin: 30px 0;
         width: 10%;
 
         a {
             text-decoration: none;
             color: #000;
             font-size: 18px;
-            font-family: 'Roboto', sans-serif;
+            font-family: $primary-font;
             font-weight: 700;
 
             &:hover {
@@ -229,3 +227,128 @@ header {
 }
 
 
+#collections-description{
+    @include background-margin-all();
+    @include display();
+    flex-direction: row;
+    justify-content: space-evenly;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.301);
+
+
+    .collection-card{
+        width: 20%;
+        height: 50vh;
+        margin: 40px 0;
+        border: 1px solid rgba(0, 0, 0, 0.301);
+        border-radius: 10px;
+        @include display();
+        justify-content: space-between;
+       
+        h3, p {
+            margin: 0;
+            font-family: $primary-font;
+            font-weight: 700;
+            text-align: center;
+            padding: 10px;
+        }
+
+        button{
+            @include btn();
+            width: 50%;
+            border-radius: 10px;
+            border:1px solid black;
+            color: #000;
+            font-size: 14px;
+            transition: all 0.3s linear;
+            margin-bottom: 10px;
+
+            &:hover{
+                @include btn-hover();
+                border: 1px solid black;
+
+                &:hover::after{
+                    @include after();
+                }
+            }
+        }
+
+        #card-background1{
+            @include card-background();
+            background-image: url(https://photos6.spartoo.eu/photos/165/16585371/16585371_500_A.jpg);
+        }
+        
+        #card-background2{
+           @include card-background();
+           background-image: url(https://www.magazinfotbal.ro/imagini/produse/mare/tricouri-polo-us-assn-us-player-copii-54283408_0_full.jpg);
+        }
+        
+        #card-background3{
+            @include card-background();
+            background-image: url(https://static.cilory.com/428322-large_default/us-polo-assn-white-round-neck-t-shirt.jpg.webp);
+            background-size: 75%;
+            background-position: top center;
+        }
+    }
+}
+
+
+footer{
+    @include background-margin-all();
+    
+
+    #bottom-section{
+        display: flex;
+        flex-direction: row;
+        justify-content: space-evenly;
+
+        .footer-section{
+
+            ul {
+                list-style: none;
+                padding-left: 0;
+
+                li{
+                    padding: 5px 0;
+                    font-family: $primary-font;
+                    cursor: pointer;
+                }
+            }
+
+            h4{
+                margin-top: 40px;
+                font-family: $primary-font;
+            }
+
+            i{
+                padding-right: 8px;
+                font-size: 18px;
+                cursor: pointer;
+                transition: transform 0.2s linear;
+
+                &:hover{
+                    transform: scale(1.3);
+                }
+            }
+        }
+    }
+
+    #copy-right{
+        @include display();
+        margin-top: 30px;
+        width: 100%;
+        position: relative;
+
+        &::after{
+            @include after();
+            border-radius: 0;
+        }
+        
+        small{
+            display: block;
+            font-size: 14px;
+            font-family: $primary-font;
+            padding: 3px 0;
+            font-weight: 700;
+        }
+    }
+}
