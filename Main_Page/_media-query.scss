@@ -1,0 +1,366 @@
+@media (min-width: 900px) and (max-width: 1200px) {
+    #main-background {
+        height: 70vh;
+
+        .middle-main-background{
+            
+            height: 25%;
+
+            p{
+                font-size: 14px;
+            }
+
+            button {
+                margin-top: 10px;
+            }
+        }
+    } 
+    #suggestions-men, #suggestions-women{
+        h2{
+            font-size: 20px;
+        }
+        .suggested-articles {  
+            height: 50vh;
+            
+            .cards{
+                height: 80%;  
+            }    
+        }
+    }
+    
+    #membership-section {
+        #anchor-tags{
+            width: 15%;
+        }
+    } 
+
+    #collections-description{
+        .collection-card{
+            height: 50vh;
+
+            h3{
+                font-size: 14px;
+            }
+
+            p{
+                font-size: 10px;
+            }
+
+            button{
+                height: 10%;
+                font-size: 10px;
+            }
+            
+            #card-background1, #card-background2, #card-background3 {
+                height: 70%;
+            }
+        }   
+    }
+
+    #copy-right{
+        
+        .right{
+            font-size: 12px;
+        }
+    }
+
+    .footer-section{
+
+        ul {
+            li{
+                font-size: 12px;
+            }
+        }
+    }
+}
+
+@media (min-width: 600px) and (max-width: 899px){
+    header{
+        nav{
+            a{
+                font-size: 10px;
+            }
+        }
+    }
+
+    #main-background {
+        height: 65vh;
+
+        .middle-main-background{
+            height: 25%;
+
+            p{
+                font-size: 10px;
+            }
+
+            button {
+                height: 30%;
+                margin-top: 20px;
+            }
+        }
+    } 
+    #suggestions-men, #suggestions-women{
+        h2{
+            font-size: 14px;
+        }
+        .suggested-articles {  
+            height: 40vh;
+            
+            .cards{
+                height: 70%;
+                
+                .card-btn{
+                    bottom: 10px;
+                    height: 10%;
+                    width: 80%;
+                    font-size: 10px;
+                }
+            }    
+        }
+    }
+    
+    #membership-section {
+
+        #join-part{
+            font-size: 12px;
+        }
+
+        #p-part{
+            font-size: 10px;
+        }
+
+        #anchor-tags{
+            width: 15%;
+
+            a{
+                font-size: 12px;
+            }
+        }
+    } 
+
+    #collections-description{
+        .collection-card{
+            height: 40vh;
+
+            h3{
+                font-size: 12px;
+            }
+
+            p{
+                font-size: 8px;
+            }
+
+            button{
+                height: 10%;
+                font-size: 8px;
+            }
+            
+            #card-background1, #card-background2, #card-background3 {
+                height: 70%;
+            }
+        }   
+    }
+
+    #copy-right{
+        
+        .right{
+            font-size: 10px;
+        }
+    }
+
+    .footer-section{
+        h4{
+            font-size: 12px;
+        }
+
+        ul {
+            li{
+                font-size: 10px;
+            }
+        }
+    }
+}
+
+@media (max-width: 599px) {
+    header{
+        margin: 0;
+        width: 100%;
+        height: 60px;
+
+        nav{
+            display: none;
+        }
+
+        #mobile-nav{
+            display: flex;
+            flex-direction: column;
+            position: fixed;
+            left: -100%;
+            top: 3rem;
+            background-color: #fff;
+            width: 100%;
+            text-align: center;
+            transition: 0.3s linear;
+            margin: 0;
+
+            a{
+                padding: 10px;
+                font-size: 12px;
+
+                &:hover{
+                    background-color: #000;
+                    color: #fff;
+                }
+            }
+        }
+
+        #mobile-nav.active{
+            left: 0;
+        }
+
+        img{
+           margin-left: 20px;
+           height: fit-content;
+        }
+
+        #icon{
+            display: block;
+            cursor: pointer;
+            margin-right: 20px;
+            color: #000;
+
+            #cancel{
+                display: none;
+            }
+
+            &:hover{
+                color: #fff;
+                background-color: #000;
+            }
+        }
+    }
+
+    #membership-section {
+        margin: 0;
+        
+        #join-part{
+            font-size: 8px;
+            width: 70%;
+        }
+
+        #p-part{
+            font-size: 6px;
+            width: 70%;
+        }
+
+        #anchor-tags{
+            width: 25%;
+
+            a{
+                font-size: 12px;
+            }
+        }
+    } 
+
+    
+    footer{
+        margin: 0;
+        #bottom-section{
+            
+            
+            .footer-section{
+                    h4{
+                    font-size: 10px;
+                }
+    
+                ul {
+                    li{
+                        font-size: 8px;
+                    }
+                }
+    
+                .fa {
+                    font-size: 12px;
+                }
+            }
+        } 
+        
+        #copy-right{
+        
+            .right{
+                font-size: 8px;
+            }
+        }
+    }
+
+    #main-background {
+        height: 30vh;
+        margin: 0;
+
+        .middle-main-background{
+            height: 35%;
+            width: 35%;
+
+            p{
+                font-size: 8px;
+            }
+
+            button {
+                height: 20%;
+                margin-top: 5px;
+                font-size: 8px;
+                width: 50%;
+            }
+        }
+    } 
+
+    #suggestions-men, #suggestions-women{
+        margin: 0;
+
+        h2{
+            font-size: 10px;
+        }
+        .suggested-articles {  
+            height: 20vh;
+            
+            .cards{
+                height: 70%;
+                
+                .card-btn{
+                    bottom: 10px;
+                    height: 10%;
+                    width: 70%;
+                    padding: 0;
+                    font-size: 6px;
+                }
+            }    
+        }
+    }
+
+    #suggestions-men{
+        padding-top: 25px;
+    }
+
+     #collections-description{
+         margin: 0;
+        .collection-card{
+            height: 30vh;
+            width: 30vw;
+
+            h3{
+                font-size: 10px;
+            }
+
+            p{
+                font-size: 6px;
+            }
+
+            button{
+                height: 10%;
+                width: 60%;
+                font-size: 6px;
+                padding: 0;
+            }
+        }   
+    }
+}

@@ -32,10 +32,23 @@ header {
         }
     }
 
+    #icon{
+        display: none;
+    }
+
+    #cancel{
+        color: #000;
+        background-color: #fff;
+    }
+
     img {
         width: 6%;
         height: 6%;
         margin-right: 70px;
+    }
+
+    #mobile-nav{
+        display: none;
     }
 }
 
@@ -351,3 +364,5 @@ footer{
         }
     }
 }
+
+@import 'media-query';
