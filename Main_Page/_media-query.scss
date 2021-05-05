@@ -325,13 +325,14 @@
             
             .cards{
                 height: 70%;
+                background-position: top center;
                 
                 .card-btn{
                     bottom: 10px;
                     height: 10%;
                     width: 70%;
                     padding: 0;
-                    font-size: 6px;
+                    font-size: 5px;
                 }
             }    
         }
