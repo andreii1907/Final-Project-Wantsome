@@ -16,3 +16,13 @@ cancelIcon.addEventListener("click", function(event){
     cancelIcon.style.display = 'none';
     enterIcon.style.display = 'block';
 });
+
+
+const suggestedMenFirstButton = document.querySelector('.card-btn');
+
+console.log(suggestedMenFirstButton);
+
+suggestedMenFirstButton.addEventListener('click', function(event){
+    event.preventDefault();
+    window.location.href = '../Product_Details/index.html';
+})
