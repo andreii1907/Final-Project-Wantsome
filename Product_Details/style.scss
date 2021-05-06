@@ -1,0 +1,364 @@
+@import '../Main_Page/mixins';
+@import '../Main_Page/fonts';
+
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    background-color: #f7f7f7;
+    position: relative;
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    @include background-margin-all();
+    position: sticky;
+    top: 0; 
+    z-index: 3;
+
+    nav {
+        margin: 0 30px;
+
+        a {
+            margin-right: 20px;
+            text-decoration: none;
+            color: #000;
+            font-weight: 700;
+            font-family: $primary-font;
+        }
+    }
+
+    #icon{
+        display: none;
+    }
+
+    #cancel{
+        color: #000;
+        background-color: #fff;
+    }
+
+    img {
+        width: 6%;
+        height: 6%;
+        margin-right: 70px;
+    }
+
+    #mobile-nav{
+        display: none;
+    }
+}
+
+#product-description{
+    @include background-margin-all();
+    display: flex;
+    justify-content: row;
+
+    #product-image{
+        background-image: url(https://assets.myntassets.com/h_1440,q_90,w_1080/v1/assets/images/2043355/2017/9/2/11504337530095-US-Polo-Assn-Men-Navy-Blue-Printed-Polo-Collar-T-shirt-9691504337529953-2.jpg);
+        background-position: top center ;
+        background-size: 100%;
+        background-repeat: no-repeat;
+        height: 100vh;
+        width: 60vw;
+    }
+
+    #product-details{
+        height: 100vh;
+        width: 40vw;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        margin-left: 50px;
+        font-family: $primary-font;
+
+        h3{
+            margin-top: 0;
+        }
+
+        #stars{
+            i:last-of-type{
+                margin-right: 8px;
+            }
+            small{
+                font-family: $second-font;
+                font-size: 14px;
+                font-weight: 700;
+                margin-right: 8px;
+            }
+        }
+
+        h3{
+            margin-top: 10px;
+        }
+
+        ul{
+            font-weight: 700;
+            font-family: $primary-font;
+            margin-top: 0;
+
+            li{
+                margin-bottom: 8px;
+            }
+        }
+
+        #sizes-btn{
+            h3{
+                display: inline-block;
+                margin-right: 8px;
+            }
+            button{
+                background-color: white;
+                color: #000;
+                border-color: #000;
+                width: 40px;
+                height: 40px;
+                margin-right: 8px;
+                font-family: $second-font;
+                transition: all 0.2s linear;
+
+                &:hover{
+                    background-color: #000;
+                    color: #fff;
+                }
+            }
+        }
+
+        #another-img{
+            display: flex;
+            flex-direction: row;
+            margin: 30px 0;
+
+            .zoom-div{
+                width: fit-content;
+                display: block;
+                overflow: hidden;
+                margin-left: 20px;
+
+                img{
+                    width: 10vw;
+                    transition: transform 0.2s linear;
+
+                    &:hover{
+                        transform: scale(1.2);
+                    }
+                } 
+            }
+        }
+
+        #add-to-cart{
+            height: 100%;
+            border-top: 1px solid rgba(0, 0, 0, 0.301);
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+
+            h3{
+                margin-bottom: 0;
+                margin-top: 10px;
+            }
+
+            p{
+                font-weight: 700;
+            }
+
+            #count{
+                display: flex;
+                justify-content: flex-start;
+
+                button{
+                    width: 30px;
+                    height: 30px;
+                    background-color: #fff;
+                    transition: all 0.2s linear;
+                    font-weight: 700;
+
+                    &:hover{
+                        background-color: #000;
+                        color: #fff;
+                    }
+                }
+
+                input{
+                    width: 30px;
+                    padding: 0 9px;
+                    font-weight: 700;
+                }
+            }
+
+            #add-btn{
+                display: flex;
+                align-items: flex-end;
+                height: 100%;
+                .add{
+                    margin-top: 20px;
+                    margin-right: 20px;
+                    width: 40%;
+                    height: 65%;
+                    border: 2px solid #000;
+                    background-color: #fff;
+                    font-family: $second-font;
+                    transition: all 0.2s linear;
+
+                    i{
+                        margin-right: 8px;
+                    }
+
+                    &:hover{
+                        background-color: #000;
+                        color: #fff;
+                    }
+                }
+            }    
+        }
+    }    
+}
+
+#suggestions-men{
+    @include background-margin-all();
+    padding-top: 45px;
+    h2 {
+        margin: 0;
+        text-align: center;
+        font-family: $primary-font;
+    }
+
+
+    .suggested-articles {
+        height: 50vh;
+        @include display();
+        flex-direction: row;
+        justify-content: space-evenly;
+    
+    
+        .cards{
+            height: 85%;
+            flex-basis: 20%;
+            @include display();
+            position: relative;
+            background-color: #fff;
+
+            &::after{
+                @include after();
+                opacity: 0.2;
+                border-radius: 10px;
+                transition: opacity 0.5s linear;
+            }
+
+            &:hover::after{
+                opacity: 0;
+            }
+
+        
+
+            .card-btn {
+            @include btn();
+            position: absolute;
+            bottom: 30px;
+            transition: all 0.3s linear;
+            z-index: 1;
+
+                &:hover{
+                    @include btn-hover();
+                    font-weight: 700;
+            
+                    &::after{
+                        @include after();
+                        z-index: -1;
+                        opacity: 0.6;
+                    }
+                }
+
+            }
+        }
+    }
+}
+
+
+
+.cards:nth-of-type(1){
+    background-image: url(https://assets.myntassets.com/h_1440,q_100,w_1080/v1/assets/images/2365438/2018/2/9/11518160260566-US-Polo-Assn-Men-Navy-Blue-Solid-Polo-Collar-T-shirt-5831518160260384-1.jpg);
+    @include background-sets();
+}
+
+.cards:nth-of-type(2) {
+    background-image: url(https://5.imimg.com/data5/TJ/YS/GLADMIN-57831385/u-s-polo-assn-navy-blue-solid-regular-fit-polo-t-shirt-500x500.png);
+    @include background-sets(); 
+}
+
+.cards:nth-of-type(3) {
+    background-image: url(https://cdn.shopify.com/s/files/1/0014/6217/3742/products/11304488-DRGY_1_d5ebb692-107e-4223-b6fe-b52b76ca93cc_3000x.jpg?v=1608042706);
+    @include background-sets(); 
+}
+
+.cards:nth-of-type(4) {
+    background-image: url(https://cdn.shopify.com/s/files/1/0014/6217/3742/products/11A2230W-MRFL--10435_1600x.jpg?v=1617031589);
+    @include background-sets(); 
+}
+
+
+footer{
+    @include background-margin-all();
+    border-top: 1px solid rgba(0, 0, 0, 0.301);
+    
+
+    #bottom-section{
+        display: flex;
+        flex-direction: row;
+        justify-content: space-evenly;
+
+        .footer-section{
+
+            ul {
+                list-style: none;
+                padding-left: 0;
+
+                li{
+                    padding: 5px 0;
+                    font-family: $primary-font;
+                    cursor: pointer;
+                }
+            }
+
+            h4{
+                margin-top: 40px;
+                font-family: $primary-font;
+            }
+
+            i{
+                padding-right: 8px;
+                font-size: 18px;
+                cursor: pointer;
+                transition: transform 0.2s linear;
+
+                &:hover{
+                    transform: scale(1.3);
+                }
+            }
+        }
+    }
+
+    #copy-right{
+        @include display();
+        margin-top: 30px;
+        width: 100%;
+        position: relative;
+
+        &::after{
+            @include after();
+            border-radius: 0;
+        }
+        
+        small{
+            display: block;
+            font-size: 14px;
+            font-family: $primary-font;
+            padding: 3px 0;
+            font-weight: 700;
+        }
+    }
+}
