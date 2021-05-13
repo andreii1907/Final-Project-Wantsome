@@ -1,0 +1,201 @@
+@media (max-width: 599px) {
+    header{
+        margin: 0;
+        width: 100%;
+        height: 60px;
+
+        nav{
+            display: none;
+            // margin: 0;
+        }
+
+        #mobile-nav{
+            display: flex;
+            flex-direction: column;
+            position: fixed;
+            left: -100%;
+            top: 3rem;
+            background-color: #fff;
+            width: 100%;
+            text-align: center;
+            transition: 0.3s linear;
+            margin: 0;
+
+            a{
+                padding: 10px;
+                font-size: 12px;
+
+                &:hover{
+                    background-color: #000;
+                    color: #fff;
+                }
+            }
+        }
+
+        #mobile-nav.active{
+            left: 0;
+        }
+
+        img{
+           margin-left: 20px;
+           height: fit-content;
+        }
+
+        #icon{
+            display: block;
+            cursor: pointer;
+            margin-right: 20px;
+            color: #000;
+
+            #cancel{
+                display: none;
+            }
+
+            &:hover{
+                color: #fff;
+                background-color: #000;
+            }
+        }
+    }
+
+    #product-description{
+        display: flex;
+        flex-direction: column;
+        margin: 0;
+    
+        #product-image{
+            height: 50vh;
+            width: 100%;
+        }
+
+        #product-details{
+            height: 100%;
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-start;
+            align-items: center;
+            margin-left: 0;
+    
+            h3{
+                font-size: 14px;
+            }
+    
+            #stars{
+                small{
+                    font-size: 14px;
+                }
+            }    
+            ul{
+                li{
+                    font-size: 12px;
+                }
+            }
+
+            #sizes-btn{
+                button{
+                    width: 30px;
+                    height: 30px;
+                    font-size: 8px;
+                }
+            }
+
+            #another-img{
+                width: 100%;
+                .zoom-div{
+                    display: flex;
+                    justify-content: space-evenly;
+    
+                    img{
+                        width: 25vw;
+                    } 
+                }
+            }
+
+            #add-to-cart{
+                width: 70%;
+                height: 300px;
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+
+                p{
+                    font-size: 12px;
+                }
+    
+                #add-btn{
+                    width: 100%;
+                    height: 100%;
+                    display: flex;
+                    justify-content: space-evenly;
+                    align-items: stretch;
+                    margin-top: 0;
+                    .add{
+                        margin-right: 0;
+                        width: 30%;
+                        height: 20%;
+                        font-size: 10px;
+                    }
+                }    
+            }
+        }    
+    }
+
+    #suggestions-men{
+        margin: 0;
+        padding-top: 10px;
+
+        h2{
+            font-size: 14px;
+        }
+        .suggested-articles {  
+            height: 25vh;
+            
+            .cards{
+                height: 70%;
+                background-position: top center;
+                
+                .card-btn{
+                    bottom: 10px;
+                    height: 10%;
+                    width: 70%;
+                    padding: 0;
+                    font-size: 8px;
+                }
+            }    
+        }
+    }
+
+    footer{
+        margin: 0;
+        #bottom-section{
+            
+            
+            .footer-section{
+                margin-left: 15px;
+                width: 30%;
+                    h4{
+                    font-size: 14px;
+                }
+    
+                ul {
+                    li{
+                        font-size: 12px;
+                    }
+                }
+    
+                .fa {
+                    font-size: 12px;
+                }
+            }
+        } 
+        
+        #copy-right{
+        
+            .right{
+                font-size: 8px;
+            }
+        }
+    }
+}

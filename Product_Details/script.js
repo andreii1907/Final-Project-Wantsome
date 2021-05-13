@@ -8,9 +8,7 @@ minus.addEventListener('click', function(event){
     if (input.value <= 1){
         return console.log('You may have at least one item');
     } 
-    
     input.value = value;
-    console.log(value);
 })
 
 plus.addEventListener('click', function(event){
@@ -19,7 +17,5 @@ plus.addEventListener('click', function(event){
     if (input.value >= 9) {
         return console.log('You can take only 9 items')
     }
-    
     input.value = value;
-    console.log(value);
 })
