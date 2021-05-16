@@ -6,7 +6,6 @@
 
         nav{
             display: none;
-            // margin: 0;
         }
 
         #mobile-nav{
@@ -20,6 +19,7 @@
             text-align: center;
             transition: 0.3s linear;
             margin: 0;
+            height: 25%;
 
             a{
                 padding: 10px;
@@ -62,6 +62,7 @@
         display: flex;
         flex-direction: column;
         margin: 0;
+        height: auto;
     
         #product-image{
             height: 50vh;
@@ -102,19 +103,18 @@
 
             #another-img{
                 width: 100%;
+                display: flex;
+                justify-content: space-evenly;
                 .zoom-div{
-                    display: flex;
-                    justify-content: space-evenly;
-    
+                    margin-left: 0;
                     img{
                         width: 25vw;
-                    } 
+                    }
                 }
             }
 
             #add-to-cart{
                 width: 70%;
-                height: 300px;
                 display: flex;
                 flex-direction: column;
                 justify-content: center;
@@ -133,8 +133,6 @@
                     margin-top: 0;
                     .add{
                         margin-right: 0;
-                        width: 30%;
-                        height: 20%;
                         font-size: 10px;
                     }
                 }    
@@ -148,6 +146,7 @@
 
         h2{
             font-size: 14px;
+            margin-top: 10px;
         }
         .suggested-articles {  
             height: 25vh;
@@ -195,6 +194,135 @@
         
             .right{
                 font-size: 8px;
+            }
+        }
+    }
+}
+
+@media (min-width: 900px) and (max-width: 1200px) {
+    
+    #product-description{
+        height: 930px;
+        #product-details{
+            ul{
+                margin-right: 20px;
+            }
+
+            #sizes-btn{
+                button{
+                    width: 35px;
+                    height: 35px;
+                    font-size: 10px;
+                }
+            }
+        }
+    }
+}
+
+@media (min-width: 600px) and (max-width: 899px){
+    header{
+        height: 50px;
+
+        img {
+            height: 100%;
+        }
+        
+        nav {
+            padding: 20px;
+            a {
+                margin-right: 10px;
+                font-size: 12px;
+            }
+        }
+    }
+
+    #product-description{
+        height: 800px;
+
+        #product-image{
+            width: 50vw;
+        }
+
+        #product-details{
+            margin-left: 20px;
+            
+            #stars{
+                small{
+                    font-size: 12px;
+                }
+            }    
+
+            ul{
+                margin-right: 20px;
+                font-size: 12px;
+            }
+
+            h3{
+                font-size: 14px;
+            }
+
+            #sizes-btn{
+                button{
+                    width: 30px;
+                    height: 30px;
+                    font-size: 8px;
+                }
+            }
+
+            #another-img{
+                margin: 20px 0;
+            }
+
+        }
+    }
+
+    #suggestions-men{
+        padding-top: 15px;
+
+        h2{
+            font-size: 16px;
+            margin-top: 10px;
+        }
+        .suggested-articles {  
+            height: 45vh;
+            margin-top: -25px;
+            
+            .cards{
+                height: 70%;
+
+                .card-btn{
+                    bottom: 10px;
+                    height: 10%;
+                    width: 70%;
+                    padding: 0;
+                    font-size: 12px;
+                }
+            }    
+        }
+    }
+
+    footer{
+        #bottom-section{
+            .footer-section{
+                h4{
+                    font-size: 14px;
+                }
+    
+                ul {
+                    li{
+                        font-size: 12px;
+                    }
+                }
+    
+                .fa {
+                    font-size: 14px;
+                }
+            }
+        } 
+        
+        #copy-right{
+            .right{
+                font-size: 10px;
             }
         }
     }
