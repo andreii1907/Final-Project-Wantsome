@@ -43,7 +43,6 @@ header {
 
     img {
         width: 6%;
-        height: 6%;
         margin-right: 70px;
     }
 
@@ -174,6 +173,12 @@ header {
     .cards:nth-of-type(4) {
         background-image: url(https://cdn.shopify.com/s/files/1/0014/6217/3742/products/11A2230W-MRFL--10435_1600x.jpg?v=1617031589);
         @include background-sets(); 
+    }
+}
+
+#suggestions-men{
+    h2{
+        margin-bottom: -20px;
     }
 }
 
