@@ -31,10 +31,9 @@ for(let i = 0; i < image.length; i++) {
     image[i].addEventListener('click', function(e) {
         e.preventDefault();
         const mainImg = document.getElementById('product-image');
-        const url = mainImg.style.backgroundImage;
-        const transformedUrl = url.slice(5, -2);
+        const url = mainImg.style.backgroundImage.slice(5, -2);
         mainImg.style.backgroundImage = 'url('+ image[i].src +')';
-        image[i].src = transformedUrl;
+        image[i].src = url;
     })
 }
 
