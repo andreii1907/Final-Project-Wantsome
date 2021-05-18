@@ -26,6 +26,7 @@ body{
         width: 50%;
         background-image: url(https://i.pinimg.com/originals/ab/c6/2a/abc62abfb0ee36357e179f21e8171cbb.jpg);
         background-size: cover;
+        background-position: center;
         background-repeat: no-repeat;
         @include display();
         position: relative;

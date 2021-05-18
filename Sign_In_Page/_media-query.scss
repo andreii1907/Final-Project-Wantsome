@@ -1,4 +1,4 @@
-@media (min-width: 769px) and (max-width: 1024px) {
+@media (min-width: 769px) and (max-width: 1023px) {
   .container {
     display: flex;
     flex-direction: column;
@@ -157,7 +157,7 @@
             img{
                 height: 100px;
                 width: 100px;
-                margin-top: 20px;
+                margin: 20px 0 -20px 0;
             }
 
             a{
