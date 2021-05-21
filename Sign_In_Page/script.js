@@ -18,7 +18,7 @@ function mailValidation(email) {
     }
   }
 
-email.addEventListener('change', function(event) {
+email.addEventListener('input', function(event) {
     event.preventDefault();
     mailValidation(email.value);
 })
