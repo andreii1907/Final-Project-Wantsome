@@ -7,7 +7,7 @@ const labelEmail = document.getElementById('label-email');
 function mailValidation(email) {
     const validSyntax = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
     if (validSyntax.test(email)) {
-        emailError.textContent = 'Email address validated!';
+        emailError.textContent = 'Valid email address!';
         emailError.style.color = 'green';
         labelEmail.appendChild(emailError);
         console.log('valid email!')
@@ -21,7 +21,7 @@ function mailValidation(email) {
     }
   }
 
-email.addEventListener('change', function(event) {
+email.addEventListener('input', function(event) {
     event.preventDefault();
     mailValidation(email.value);
 })
@@ -45,8 +45,9 @@ eye.addEventListener('click', function(event) {
 const message = document.createElement('span');
 
 function passwordValidation (passkey) {
-    let specialCharacters = /[!@#$%^&*()_+\-=\[\]{};':"\\|,.<>\/?]+/;
-    if (passkey.length < 8) {
+    const specialCharacters = /[!@#$%^&*()_+\-=\[\]{};':"\\|,.<>\/?]+/;
+    const minPasswordLength = 8;
+    if (passkey.length < minPasswordLength) {
         message.textContent= 'You must have 8 characters.';
         message.style.color = 'red';
         labelPassword.appendChild(message);
@@ -64,7 +65,7 @@ function passwordValidation (passkey) {
     }
 } 
 
-password.addEventListener('change', function(event) {
+password.addEventListener('input', function(event) {
     event.preventDefault();
     message.remove();
     passwordValidation(password.value);
@@ -79,9 +80,13 @@ const fName = document.getElementById('fname');
 const lName = document.getElementById('lname');
 
 submit.addEventListener('click', function(event) {
-    if (passwordValidation(password.value) == true && mailValidation(email.value) == true && fName.value !== '' && lName.value !== '') {
+    event.preventDefault();
+    if (passwordValidation(password.value) && mailValidation(email.value) && fName.value !== '' && lName.value !== '') {
         window.location.href = "../Main_Page/index.html";
     } else {
         alert('Something is wrong! Try again');
     }
 })
+
+
+// Chosse country and state //
