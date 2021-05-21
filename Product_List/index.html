@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="description" content="Marketplace">
+    <meta name="keywords" content="USPA, Polo, Product-List">
+    <meta name="author" content="Luchian Andrei">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>USPA Product List</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Lobster&display=swap" rel="stylesheet">
+  </head>
+  <body>
+    <header>
+        <nav>
+            <a href="">New Arrivals</a>
+            <a href="">About Us</a>
+            <a href=""></a>
+        </nav>
+        <img src="https://www.alkout.com/wp-content/uploads/2018/02/Artboard-1-100-20.jpg" alt="logo image">
+        <nav>
+            <a href=""><i class="fa fa-search"></i></a>
+            <a href=""><i class="fa fa-cart-arrow-down"></i><span class="value"> 0.00</span></a>
+            <a href=""><i class="fa fa-user"></i></a>
+        </nav>
+        <div id="icon" >
+          <i id="enter" class="fa fa-bars"></i>
+          <i id="cancel" class="fa fa-times"></i>
+        </div>
+        <nav id="mobile-nav">
+          <a href="">Search</a>
+          <a href="">Account</a>
+          <a href="">New Arrivals</a>
+          <a href="">About Us</a>
+        </nav>
+    </header>
+    <section id="search-section">
+      <div id="search-bar">
+        <input type="text" placeholder="Search for results..."/>
+        <button type="button">Search</button>
+      </div>
+    </section>
+    <section id="filtring-part">
+      <aside>
+      </aside>
+      <main>
+        <h2>Browsing into the products list</h2>
+        <div id="selectors">
+          <label for="sort">Sort By Price
+            <select id="sort1">
+              <option value="null">Select area</option>
+              <option value="higher-price">Higher price</option>
+              <option value="lower-price">Lower price</option>
+            </select>
+          </label>
+          <label for="sort">Sort By Gender
+            <select id="sort2">
+              <option>Male</option>
+              <option>Female</option>
+            </select>
+          </label>
+        </div>
+        <div id="products"></div>
+      </main>
+    </section>
+    <footer>
+      <div id="bottom-section">
+        <div class="footer-section">
+          <h4>ABOUT</h4>
+          <ul>
+            <li>Blog</li>
+            <li>Team</li>
+            <li>Jobs</li>
+            <li>Media Coverage</li>
+            <li>United States Polo Association</li>
+          </ul>
+        </div>
+        <div class="footer-section">
+          <h4>HELP</h4>
+          <ul>
+            <li>Disclaimer</li>
+            <li>Privacy Policy</li>
+            <li>Cookies Policy</li>
+            <li>Terms and Conditions</li>
+            <li>FAQ</li>
+          </ul>
+        </div>
+        <div class="footer-section">
+          <h4>Social Media</h4>
+          <i class="fa fa-facebook-f"></i>
+          <i class="fa fa-instagram"></i>
+          <i class="fa fa-twitter"></i>
+          <i class="fa fa-youtube"></i>
+          <i class="fa fa-envelope"></i>
+        </div>
+      </div>
+      <div id="copy-right">
+        <small class="right">&copy; Copyright 2021, U.S. Polo Assn.</small>
+        <small class="right">Not affiliated with Ralph Lauren Corporation</small>
+      </div>
+    </footer>
+  <script type="text/javascript" src="script.js"></script>  
+  </body>
+</html>

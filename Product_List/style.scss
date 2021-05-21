@@ -1,0 +1,219 @@
+@import '../Main_Page/mixins';
+@import '../Main_Page/fonts';
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    background-color: #f7f7f7;
+    position: relative;
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    @include background-margin-all();
+    position: sticky;
+    top: 0; 
+    z-index: 3;
+
+    nav {
+        margin: 0 30px;
+
+        a {
+            margin-right: 20px;
+            text-decoration: none;
+            color: #000;
+            font-weight: 700;
+            font-family: $primary-font;
+        }
+    }
+
+    #icon{
+        display: none;
+    }
+
+    #cancel{
+        color: #000;
+        background-color: #fff;
+    }
+
+    img {
+        width: 6%;
+        margin-right: 70px;
+    }
+
+    #mobile-nav{
+        display: none;
+    }
+}
+
+#search-section{
+    @include background-margin-all();
+    background-color: #f7f7f7;
+    display: flex;
+    padding: 15px;
+    justify-content: center;
+    border: 10px solid #fff;
+
+    #search-bar{
+        width: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+
+        input, button{
+            border-radius: 5px;
+            padding: 5px;
+            border: 2px solid #000;
+            font-family: $second-font;
+        }
+
+        input{
+            width: 84%;
+        }
+
+        button{
+            width: 15%;
+            padding: 5px;
+            background-color: #fff;
+            transition: all 0.3s linear;
+
+            &:hover{
+                background-color: #000;
+                color: #fff;
+            }
+        }
+    }
+}
+
+#filtring-part{
+    @include background-margin-all();
+    display: flex;
+
+    aside{
+        width: 30%;
+    }
+
+    main{
+        width:70%;
+
+        h2{
+            font-family: $primary-font;
+        }
+
+        #selectors{
+            display: flex;
+            justify-content: space-between;
+            width: 25%;
+            font-family: $second-font;
+
+            select{
+                padding: 5px;
+                font-family: $second-font;
+                width: 85%;
+            }
+        }
+
+        #products{
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            margin-right: 10px;
+            position: relative;
+            div{
+                display: flex;
+                justify-content: flex-end;
+                align-items: flex-end;
+                height: 45vh;
+                background-position: top center;
+                background-size: cover;
+                flex-basis: 30%;
+                margin-top: 20px;
+                position: relative;
+
+                &:after{
+                    @include after();
+                    transition: opacity 0.3s linear;
+                }
+
+                &:hover::after{
+                    opacity: 0;
+                }
+
+                small{
+                    font-weight: 700;
+                    font-family: $primary-font;
+                    padding: 3px;
+                    margin: 5px;
+                    border: 1px solid #000;
+                    background-color: #f7f7f7;
+                    z-index: 2;
+                }
+            }
+        }
+    }
+}
+
+footer{
+    @include background-margin-all();
+    #bottom-section{
+        display: flex;
+        flex-direction: row;
+        justify-content: space-evenly;
+
+        .footer-section{
+
+            ul {
+                list-style: none;
+                padding-left: 0;
+
+                li{
+                    padding: 5px 0;
+                    font-family: $primary-font;
+                    cursor: pointer;
+                }
+            }
+
+            h4{
+                margin-top: 40px;
+                font-family: $primary-font;
+            }
+
+            i{
+                padding-right: 8px;
+                font-size: 18px;
+                cursor: pointer;
+                transition: transform 0.2s linear;
+
+                &:hover{
+                    transform: scale(1.3);
+                }
+            }
+        }
+    }
+
+    #copy-right{
+        @include display();
+        margin-top: 30px;
+        width: 100%;
+        position: relative;
+        background-color: #f7f7f7;
+        border: 10px solid #fff;
+
+        &::after{
+            border-radius: 0;
+        }
+        
+        small{
+            display: block;
+            font-size: 14px;
+            font-family: $primary-font;
+            padding: 3px 0;
+            font-weight: 700;
+        }
+    }
+}
