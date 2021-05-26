@@ -17,6 +17,8 @@
         <link href="https://fonts.googleapis.com/css2?family=Lobster&display=swap" rel="stylesheet">
     </head>
     <body>
+      <section id="main">
+      <main>
         <header>
             <nav>
                 <a href="../Main_Page/index.html">Home</a>
@@ -26,7 +28,7 @@
             <img src="https://www.alkout.com/wp-content/uploads/2018/02/Artboard-1-100-20.jpg" alt="logo image">
             <nav>
                 <a href=""><i class="fa fa-search"></i></a>
-                <a href=""><i class="fa fa-cart-arrow-down"></i><span class="value"> 0.00</span></a>
+                <a id="cart-anchor" href=""><i class="fa fa-cart-arrow-down"></i><span class="value"> 0.00</span></a>
                 <a href=""><i class="fa fa-user"></i></a>
             </nav>
             <div id="icon" >
@@ -35,7 +37,7 @@
             </div>
             <nav id="mobile-nav">
                 <a href="">Search</a>
-                <a href="">Account</a>
+                <a id="your-cart" href="">Your Cart</a>
                 <a href="">New Arrivals</a>
                 <a href="">About Us</a>
             </nav>
@@ -68,12 +70,12 @@
                 </ul>
                 <div id="sizes-btn">
                     <h3>Sizes:</h3>
-                    <button id="xs" type="button">XS</button>
-                    <button id="s" type="button">S</button>
-                    <button id="m" type="button">M</button>
-                    <button id="l" type="button">L</button>
-                    <button id="xl" type="button">XL</button>
-                    <button id="xxl" type="button">XXL</button>
+                    <button id="xs" type="button" value="XS">XS</button>
+                    <button id="s" type="button" value="S">S</button>
+                    <button id="m" type="button" value="M">M</button>
+                    <button id="l" type="button" value="L">L</button>
+                    <button id="xl" type="button" value="XL">XL</button>
+                    <button id="xxl" type="button" value="XXL">XXL</button>
                 </div>
                 <div id="another-img">
                     <div class="zoom-div">
@@ -88,15 +90,18 @@
                 </div>
                 <div id="add-to-cart">
                     <h3>Add to cart Model 201</h3>
-                    <p>&euro;59.99</p>
+                    <p id="product-price">&euro;59.99</p>
                     <div id="count">
                         <button id="minus" type="button">-</button>
                         <input id="input" type="text" value="1">
                         <button id="plus" type="button">+</button>
                     </div>
+                    <div id="popup">
+                      <span id="myPopup"></span>
+                    </div>
                     <div id="add-btn">
-                        <button class="add" type="button">Add to cart</button>
-                        <button class="add" type="button"><i class="fa fa-heart"></i>Wishlist</button>
+                        <button id="add-to-cart-btn" class="add" type="button">Add to cart</button>
+                        <button id="add-to-whishlist" class="add" type="button"><i class="fa fa-heart"></i>Wishlist</button>
                     </div>
                 </div>
             </div>
@@ -154,6 +159,14 @@
               <small class="right">Not affiliated with Ralph Lauren Corporation</small>
             </div>
           </footer>
+      </main>
+      <section id="cart-container"> 
+          <div id="cart-items">
+            <h2>Your Cart</h2>
+          </div>
+          <h3>Total</h3>
+      </section>
+    </section>
           <script type="text/javascript" src="script.js"></script>
           <script type="text/javascript" src="../Main_Page/script.js"></script>
     </body>

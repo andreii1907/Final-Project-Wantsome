@@ -11,6 +11,99 @@ body {
     position: relative;
 }
 
+#main{
+    display: flex;
+    width: 100%;
+    overflow: hidden;
+}
+
+main{
+    width: 100%;
+    transition: all 0.3s linear;
+    position: relative;
+}
+
+.main-movement{
+    margin-left: -420px;
+    
+    &::after{
+        @include after();
+        opacity: 0.6;
+        z-index: 3;
+    }
+}
+
+#cart-container{
+    margin-right: -420px;
+    background-color: #fff;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    h2{
+        font-family: $second-font;
+    }
+    #cart-items, h3{
+        width: 20%;
+        text-align: center;
+        margin-left: 15%;
+        div{
+            border-bottom: 2px solid #f7f7f7;
+            margin-top: 10px;
+            img{
+                width: 100%;
+            }
+        
+            h2, p{
+                font-family: $second-font;
+                font-size: 18px;
+                
+            }
+
+            button{
+                background-color: transparent;
+                border-radius: 5px;
+                font-family: $second-font;
+                transition: all 0.3s linear;
+                margin-bottom: 10px;
+
+                &:hover{
+                    background-color: #000;
+                    color:#fff;
+                }
+            }
+        }
+    }
+    h3{
+        font-family: $second-font;
+        font-size: 24px;
+    }
+}
+
+.cart-container-active{
+    width: 100vw;
+    position: relative;
+
+    #cart-items{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+       
+        div{
+            width: 100vw;
+        }
+    }
+
+    .back-button{
+        position: absolute;
+        top:10px;
+        left: 0;
+        background-color: transparent;
+        border: none;
+        padding: 20px;
+        font-family: $second-font;
+    }
+}
+
 header {
     display: flex;
     justify-content: space-between;
@@ -44,6 +137,7 @@ header {
         width: 6%;
         height: 6%;
         margin-right: 70px;
+        z-index: 3;
     }
 
     #mobile-nav{
@@ -122,6 +216,11 @@ header {
                     color: #fff;
                 }
             }
+
+            .clicked-size{
+                background-color: #000;
+                color: #fff;
+            }
         }
 
         #another-img{
@@ -150,6 +249,7 @@ header {
             flex-direction: column;
             justify-content: space-between;
             border-top: 1px solid rgba(0, 0, 0, 0.301);
+            position: relative;
             
             h3{
                 margin-bottom: 0;
@@ -184,20 +284,41 @@ header {
                 }
             }
 
+            #popup{
+                display: none;
+                text-align: center;
+                margin-top: 20px;
+                background-color: #f7f7f7;
+                border-radius: 10px;
+                padding: 20px;
+                width: 83%;
+                margin-right: 16%;
+                height: 70%;
+                font-family: $second-font;
+                position: absolute;
+                top: -10px;
+                right: 10px;
+                justify-content: center;
+                align-items: center;
+            }
+
             #add-btn{
                 display: flex;
+                justify-content: flex-start;
                 align-items: flex-end;
                 height: 100%;
+              
                 .add{
                     margin-top: 20px;
                     margin-right: 20px;
+                    height: 30px;
                     width: 40%;
-                    height: 65%;
                     border: 1px solid #000;
                     background-color: #fff;
                     font-family: $second-font;
                     transition: all 0.2s linear;
-
+                    align-items: center;
+                    justify-content: center;
                     i{
                         margin-right: 8px;
                     }
@@ -227,8 +348,7 @@ header {
         @include display();
         flex-direction: row;
         justify-content: space-evenly;
-    
-    
+
         .cards{
             height: 85%;
             flex-basis: 20%;
