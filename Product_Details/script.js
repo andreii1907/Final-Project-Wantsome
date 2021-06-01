@@ -138,26 +138,38 @@ function removeButton(){
     removeButton.textContent = 'Remove';
     for (let prod of product){
         prod.appendChild(removeButton);
+        prod.classList.add('prod');
         removeButton.addEventListener('click', function(e){
             e.preventDefault();
             e.stopPropagation();
             removeButton.parentElement.remove();
         })
     }
-};
+}
+
+const total = document.getElementById('total');
+const totalMainPage = document.getElementById('value');
 
 function totalCalc () {
-    const total = document.getElementById('total');
     const priceListValue = [];
     for (let price of priceList){
-        const priceValue = price.slice(8, 13);
+        var priceValue = price.slice(8, 13);
         priceListValue.push(Number(priceValue));
     }
     const reducer = (accumulator, currentvalue) => accumulator + currentvalue;
-    total.textContent = `Total: ${priceListValue.reduce(reducer)} €`;
-    if (removeButton.addEventListener) {
-        console.log('sters');
-    }
+    let totalValue = null;
+    totalValue += priceListValue.reduce(reducer);
+    // if (input.value == 2){
+    //     totalValue += Number(priceValue);
+    // } else if(input.value == 3){
+    //     totalValue = totalValue + (Number(priceValue) * 2);
+    // } else if(input.value == 4){
+    //     totalValue += (Number(priceValue) * 3);
+    // } else if(input.value == 5){
+    //     totalValue += (Number(priceValue) * 4);
+    // }
+    total.textContent = `Total: ${totalValue + totalValue} €`;1
+    totalMainPage.textContent = totalValue;
 }
 
 addToCartButton.addEventListener('click', function(e){
