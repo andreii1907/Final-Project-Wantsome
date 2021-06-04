@@ -90,3 +90,21 @@ submit.addEventListener('click', function(event) {
 
 
 // Chosse country and state //
+
+const countriesSelector = document.getElementById('country');
+const statesSelector = document.getElementById('state');
+const nameProvinces = [];
+
+fetch('https://gist.githubusercontent.com/manishtiwari25/0fa055ee14f29ee6a7654d50af20f095/raw/d05cea30495c2535d7304eb92dfe609704d9ef65/country_state.json')
+    .then(response => response.json())
+    .then(countries => {
+        for (let country of countries) {
+            const teritory = document.createElement('option');
+            teritory.textContent = country.name;
+            countriesSelector.appendChild(teritory);
+            const states = document.createElement('option');
+            const provinces = country.stateProvinces;
+            console.log(provinces)
+            }
+        }
+    );
