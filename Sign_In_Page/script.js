@@ -37,9 +37,21 @@ eye.addEventListener('click', function(event) {
 
 const submit = document.getElementById('submit');
 
+const accounts = [
+    {email: 'luchianandrei1024@yahoo.com', password: 'test1234@'},
+    {email: 'mihaelamihai', password: 'test5678@'},
+    {email: 'mihaimuraru@yahoo.com', password: 'test91011@'},
+    {email: 'ionitamarius@gmail', password: 'test987@'},
+    {email: 'tudoralex@yahoo.com', password: 'test654@'}
+]
+
 submit.addEventListener('click', function(event){
     event.preventDefault();
-    if (mailValidation(email.value) == true && password.value !== '') {
+    const existingAccount = accounts.find((user) => {
+        return email.value === user.email && password.value === user.password;
+    })
+    console.log(existingAccount);
+    if ( mailValidation(email.value) == true && password.value !== '' && existingAccount) {
         window.location.href = "../Main_Page/index.html";
     } else {
         alert('Something is wrong! Email address or password is  wrong! Please try again!');
