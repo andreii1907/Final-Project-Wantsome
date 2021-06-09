@@ -141,28 +141,14 @@ function addToCart(){
     function totalCalc() {
         const priceListValue = [];
         for (let price of priceList){
-            let priceValue = price.slice(8, 13);
-            priceListValue.push(Number(priceValue)); 
-        }    
+            let priceValue = Number(price.slice(8, 13));
+            priceListValue.push(priceValue);
+            console.log(priceListValue);
+        }
         const reducer = (accumulator, currentvalue) => accumulator + currentvalue;
-        const totalValue = priceListValue.reduce(reducer);
+        let totalValue = priceListValue.reduce(reducer);
         total.textContent = totalValue;
         totalMainPage.textContent = totalValue;
-
-        removeButton.addEventListener('click', function(e){
-            e.preventDefault();
-            let listOfPrices = document.getElementsByClassName('prices');
-            priceOfRemovedItem = removeButton.parentElement.children[1].textContent.slice(8,13);
-            const totalTrasnsformed = Number(total.textContent - priceOfRemovedItem).toFixed(2);
-            if (listOfPrices.length <= 1) {
-                total.textContent = 'Total' 
-                totalMainPage.textContent = '0.00';
-            }
-            else{
-                total.textContent = totalTrasnsformed;
-                totalMainPage.textContent = totalTrasnsformed;
-            } 
-        })
     }
 
     function removeAction(){
@@ -170,15 +156,25 @@ function addToCart(){
             removeButton.textContent = 'Remove';
             for (let prod of product){
                 prod.appendChild(removeButton);
-                prod.classList.add('prod');
-                removeButton.addEventListener('click', function(e){
-                    e.preventDefault();
-                    e.stopPropagation();
-                    removeButton.parentElement.remove();
-                })
+                prod.classList.add('prod');   
             }
+
+            removeButton.addEventListener('click', function(e){
+                e.preventDefault();
+                e.stopPropagation();
+                removeButton.parentElement.remove();
+                let listOfPrices = document.getElementsByClassName('prices');
+                const priceOfRemovedItem = removeButton.parentElement.children[1].textContent.slice(8,13);
+                const totalTrasnsformed = Number(total.textContent - priceOfRemovedItem).toFixed(2);
+                if (listOfPrices.length < 1) {
+                    total.textContent = 'Total' 
+                    totalMainPage.textContent = '0.00';
+                } else{
+                    total.textContent = totalTrasnsformed;
+                    totalMainPage.textContent = totalTrasnsformed;   
+                }
+            })
         }
-     
         return {
             createElementsForCart,
             removeAction,
@@ -240,6 +236,3 @@ buttonCartMobile.addEventListener('click', function(e){
     mobileCart.backButton();
     mobileCart.cartMobileStyle();
 });
-
-
-
