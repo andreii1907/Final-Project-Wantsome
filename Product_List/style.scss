@@ -5,10 +5,106 @@
     box-sizing: border-box;
 }
 
+
 body {
     margin: 0;
     background-color: #f7f7f7;
     position: relative;
+}
+
+
+#main{
+    display: flex;
+    width: 100%;
+    overflow: hidden;
+    position: relative;
+}
+
+#main-part{
+    width: 100%;
+    transition: all 0.3s linear;
+    position: relative;
+}
+
+.main-movement{
+    margin-left: -240px;
+    
+    &::after{
+        @include after();
+        opacity: 0.6;
+        z-index: 3;
+    }
+}
+
+#cart-container{
+    margin-right: -420px;
+    background-color: #fff;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    h2{
+        font-family: $second-font;
+    }
+    #cart-items, h3{
+        width: 20%;
+        text-align: center;
+        margin-left: 11%;
+        div{
+            border-bottom: 2px solid #f7f7f7;
+            margin-top: 10px;
+            img{
+                width: 100%;
+            }
+        
+            h2, p{
+                font-family: $second-font;
+                font-size: 18px;
+                
+            }
+
+            button{
+                background-color: transparent;
+                border-radius: 5px;
+                font-family: $second-font;
+                transition: all 0.3s linear;
+                margin-bottom: 10px;
+
+                &:hover{
+                    background-color: #000;
+                    color:#fff;
+                }
+            }
+        }
+    }
+    h3{
+        font-family: $second-font;
+        font-size: 24px;
+    }
+}
+
+.cart-container-active{
+    width: 100vw;
+    position: relative;
+
+    #cart-items{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+       
+        div{
+            width: 100vw;
+        }
+    }
+
+    .back-button{
+        position: absolute;
+        top:10px;
+        left: 0;
+        background-color: transparent;
+        border: none;
+        padding: 20px;
+        font-family: $second-font;
+    }
 }
 
 header {
@@ -93,11 +189,44 @@ header {
 #filtring-part{
     @include background-margin-all();
     display: flex;
+    justify-content: space-evenly;
+    position: relative;
 
     aside{
-        width: 30%;
-    }
+        width: 20%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+            
+            .filtring{  
+                margin: 20px;
+                height: fit-content;
+                background-color: #f7f7f7;
+                border-radius: 10px;
+                padding: 10px;
+                width: 90%;
+                margin-bottom: 10px;
+                display: flex;
+                flex-direction: column;
+                
+                p{
+                    font-family: $second-font;
+                }
 
+                .inputs {
+                    margin-bottom: 10px;
+                    font-family: $second-font;
+                    font-size: 16px;
+                }
+
+                button {
+                    width: fit-content;
+                    font-family: $second-font;
+                    background-color: #fff;
+                    margin-bottom: 10px;
+                }
+            }
+        }
     main{
         width:70%;
 
@@ -126,8 +255,8 @@ header {
             position: relative;
             div{
                 display: flex;
-                justify-content: flex-end;
-                align-items: flex-end;
+                justify-content: space-evenly;
+                align-items:  flex-end;
                 height: 45vh;
                 background-position: top center;
                 background-size: cover;
@@ -135,16 +264,8 @@ header {
                 margin-top: 20px;
                 position: relative;
 
-                &:after{
-                    @include after();
-                    transition: opacity 0.3s linear;
-                }
-
-                &:hover::after{
-                    opacity: 0;
-                }
-
-                small{
+                small, button{
+                    display: none;
                     font-weight: 700;
                     font-family: $primary-font;
                     padding: 3px;
@@ -153,6 +274,19 @@ header {
                     background-color: #f7f7f7;
                     z-index: 2;
                 }
+
+                &:after{
+                    @include after();
+                    transition: opacity 0.3s linear;
+                }
+
+                &:hover::after{
+                    opacity: 0;
+
+                    small {
+                        display: block;
+                    }
+                }                
             }
         }
     }
