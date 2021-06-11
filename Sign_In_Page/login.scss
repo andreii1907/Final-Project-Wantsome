@@ -1,3 +1,6 @@
+@import '../Assets/mixins';
+@import '../Assets/fonts';
+
 *{
     box-sizing: border-box;
 }
@@ -8,19 +11,12 @@ body{
     background-color: rgb(247, 247, 247);
 }
 
-@mixin display {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-}
-
 .container{
     height: 100%;
     display: flex;
     flex-direction: row;
     margin: 0 35px;
-    font-family: 'Roboto', sans-serif;
+    font-family: $primary-font;
 
     .left{
         width: 50%;
@@ -105,7 +101,7 @@ body{
             h3{
                 font-size: 24px;
                 letter-spacing: 2px;
-                font-family: 'Lobster', cursive;
+                font-family: $second-font;
             }
 
             form{

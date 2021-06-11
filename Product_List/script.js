@@ -207,14 +207,14 @@ for (let prod of products){
 }
 
 // Clear radio buttons // 
-const clearBtn = document.getElementsByClassName('clear');
+const clearBtn = document.getElementById('clear');
 
-for (let clear of clearBtn) {
-    clear.addEventListener('click', function(e){
-        e.preventDefault();
-        const clearForFilter = clear.parentElement.querySelectorAll('div input');
-        for (let filter of clearForFilter) {
-            filter.checked = false;
-        }
-    });
-}
+clear.addEventListener('click', function(e){
+    e.preventDefault();
+    const filtrationToClear = document.querySelectorAll('.inputs input');
+    for (let filter of filtrationToClear) {
+        filter.checked = false;
+    }
+});
+
+

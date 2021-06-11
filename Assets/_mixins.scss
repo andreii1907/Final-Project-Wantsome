@@ -52,3 +52,17 @@
     margin: 0 35px;
     background-color: #fff;
 }
+
+@mixin btn-list-page {
+        width: fit-content;
+        font-family: $second-font;
+        background-color: #fff;
+        padding: 5px 10px 5px 10px;
+        border-radius: 10px;
+        border: 1px solid #000;
+
+        &:hover{
+            color: #fff;
+            background-color: black;
+        }
+}

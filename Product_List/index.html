@@ -48,80 +48,86 @@
           <button type="button">Search</button>
         </div>
       </section>
-      <section id="filtring-part">
+      <section id="filtring-and-list">
         <aside>
             <div class="filtring" id="price-filtering">
               <form>
               <p>Filter by price</p>
               <div class="inputs">
-                <input type="radio" id="filtring1" name="filter-pricing">
+                <input type="checkbox" id="filtring1" name="filter-pricing">
                 <label for="filtring1">< 29.99</label>
               </div>
               <div class="inputs">
-                <input type="radio" id="filtring2" name="filter-pricing">
+                <input type="checkbox" id="filtring2" name="filter-pricing">
                 <label for="filtring2">29.99-39.99</label>
               </div>
               <div class="inputs">
-                <input type="radio" id="filtring3" name="filter-pricing">
+                <input type="checkbox" id="filtring3" name="filter-pricing">
                 <label for="filtring3">39.99-49.99</label>
               </div>
               <div class="inputs">
-                <input type="radio" id="filtring4" name="filter-pricing">
+                <input type="checkbox" id="filtring4" name="filter-pricing">
                 <label for="filtring4">49.99-59.99</label>
               </div> 
               <div class="inputs"> 
-                <input type="radio" id="filtring5" name="filter-pricing">
+                <input type="checkbox" id="filtring5" name="filter-pricing">
                 <label for="filtring5">> 59.99</label>
               </div>
-              <button type="button" class="clear">Clear</button>
             </form>
             </div>
             <div class="filtring" id="gender-filtring">
               <form action="">
                 <p>Filter by gender</p>
                 <div class="inputs">
-                  <input type="radio" id="filtring-mens" name="filter-gender">
+                  <input type="checkbox" id="filtring-mens" name="filter-gender">
                   <label for="filtring-mens">Mens</label>
                 </div>
                 <div class="inputs">
-                  <input type="radio" id="filtring-womens" name="filter-gender">
+                  <input type="checkbox" id="filtring-womens" name="filter-gender">
                   <label for="filtring-womens">Womens</label>
                 </div>
-                <button type="button" class="clear">Clear</button>
               </form>
             </div>
             <div class="filtring" id="quality-filtring">
               <form action="">
                 <p>Filter by quality</p>
                 <div class="inputs">
-                  <input type="radio" id="filtring-basic" name="filter-quality">
+                  <input type="checkbox" id="filtring-basic" name="filter-quality">
                   <label for="filtring-basic">Basic</label>
                 </div>
                 <div class="inputs">
-                  <input type="radio" id="filtring-premium" name="filter-quality">
+                  <input type="checkbox" id="filtring-premium" name="filter-quality">
                   <label for="filtring-premium">Premium</label>
                 </div>
-                <button type="button" class="clear">Clear</button>
               </form>
+            </div>
+            <div id="submit">
+              <button type="button" id="clear">Clear</button>
+              <button type="button" id='submit-btn'>Submit Filters</button>
             </div>
         </aside>
         <main id="list">
           <h2>Browsing into the products list</h2>
-          <div id="selectors">
-            <label for="sort">Sort By Price
-              <select id="sort1">
-                <option value="null">Select area</option>
-                <option value="higher-price">Higher price</option>
-                <option value="lower-price">Lower price</option>
-              </select>
-            </label>
-            <label for="sort2">Sort Alphabetical
-              <select id="sort2">
-                <option value="null">Select Area</option>
-                <option>A-Z</option>
-                <option>Z-A</option>
-              </select>
-            </label>
+          <div id="sort">
+            <div id="selectors">
+              <label for="sort">Sort By Price
+                <select id="sort1">
+                  <option value="null">Select area</option>
+                  <option value="higher-price">Higher price</option>
+                  <option value="lower-price">Lower price</option>
+                </select>
+              </label>
+              <label for="sort2">Sort Alphabetical
+                <select id="sort2">
+                  <option value="null">Select Area</option>
+                  <option>A-Z</option>
+                  <option>Z-A</option>
+                </select>
+              </label>
+            </div>
+            <div id="reset-div">
+              <button type="button">Reset</button>
+            </div>
           </div>
           <div id="products"></div>
         </main>
@@ -171,5 +177,6 @@
     </section>
   </section>
   <script type="text/javascript" src="script.js"></script>  
+  <script type="text/javascript" src="../Assets/mobile-nav.js"></script>  
   </body>
 </html>
