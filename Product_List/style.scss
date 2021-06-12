@@ -1,5 +1,5 @@
 @import '../Assets/mixins';
-@import '../Assets/fonts';
+@import '../Assets/fonts-colors';
 
 * {
     box-sizing: border-box;
@@ -8,7 +8,7 @@
 
 body {
     margin: 0;
-    background-color: #f7f7f7;
+    background-color: $body-color;
     position: relative;
 }
 
@@ -38,7 +38,7 @@ body {
 
 #cart-container{
     margin-right: -420px;
-    background-color: #fff;
+    background-color: $primary-color;
     display: flex;
     flex-direction: column;
     align-items: flex-start;
@@ -50,7 +50,7 @@ body {
         text-align: center;
         margin-left: 11%;
         div{
-            border-bottom: 2px solid #f7f7f7;
+            border-bottom: 2px solid $body-color;
             margin-top: 10px;
             img{
                 width: 100%;
@@ -70,8 +70,8 @@ body {
                 margin-bottom: 10px;
 
                 &:hover{
-                    background-color: #000;
-                    color:#fff;
+                    background-color: $secondary-color;
+                    color: $primary-color;
                 }
             }
         }
@@ -123,7 +123,7 @@ header {
         a {
             margin-right: 20px;
             text-decoration: none;
-            color: #000;
+            color: $secondary-color;
             font-weight: 700;
             font-family: $primary-font;
         }
@@ -134,8 +134,8 @@ header {
     }
 
     #cancel{
-        color: #000;
-        background-color: #fff;
+        color: $secondary-color;
+        background-color: $primary-color;
     }
 
     img {
@@ -150,11 +150,11 @@ header {
 
 #search-section{
     @include background-margin-all();
-    background-color: #f7f7f7;
+    background-color: $body-color;
     display: flex;
     padding: 15px;
     justify-content: center;
-    border: 10px solid #fff;
+    border: 10px solid $primary-color;
 
     #search-bar{
         width: 50%;
@@ -165,7 +165,7 @@ header {
         input, button{
             border-radius: 5px;
             padding: 5px;
-            border: 2px solid #000;
+            border: 2px solid $secondary-color;
             font-family: $second-font;
         }
 
@@ -176,14 +176,24 @@ header {
         button{
             width: 15%;
             padding: 5px;
-            background-color: #fff;
+            background-color: $primary-color;
             transition: all 0.3s linear;
 
             &:hover{
-                background-color: #000;
-                color: #fff;
+                background-color: $secondary-color;
+                color: $primary-color;
             }
         }
+    }
+}
+
+#arrow-down-filter{
+    display: none;
+    text-align: center;
+    background-color: $primary-color;
+
+    #up{
+        display: none;
     }
 }
 
@@ -202,7 +212,7 @@ header {
             .filtring{  
                 margin: 20px;
                 height: fit-content;
-                background-color: #f7f7f7;
+                background-color: $body-color;
                 border-radius: 10px;
                 padding: 10px;
                 width: 90%;
@@ -244,7 +254,7 @@ header {
             display: flex;
             justify-content: space-between;
             align-items: flex-end;
-            margin-right: 10px;
+            margin-right: 10px 0 10px 0;
             #selectors{
                 display: flex;
                 justify-content: space-between;
@@ -288,8 +298,9 @@ header {
                     font-family: $primary-font;
                     padding: 3px;
                     margin: 5px;
-                    border: 1px solid #000;
-                    background-color: #f7f7f7;
+                    border: 1px solid $secondary-color;
+                    border-radius: 5px;
+                    background-color: $body-color;
                     z-index: 2;
                 }
 
@@ -353,8 +364,8 @@ footer{
         margin-top: 30px;
         width: 100%;
         position: relative;
-        background-color: #f7f7f7;
-        border: 10px solid #fff;
+        background-color: $body-color;
+        border: 10px solid $primary-color;
 
         &::after{
             border-radius: 0;

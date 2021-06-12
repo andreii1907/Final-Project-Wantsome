@@ -186,6 +186,47 @@ cartButton.addEventListener('click', function(e){
     });
 });
 
+// Add to cart for mobile //
+
+const buttonCartMobile = document.getElementById('your-cart');
+function cartForMobile() {
+    function backButton () {
+        const backButton = document.createElement('button');
+        backButton.textContent = 'Back';
+        backButton.classList.add('back-button');
+        cartContainer.appendChild(backButton);
+        backButton.addEventListener('click', function(e){
+            e.preventDefault();
+            mainPage.style.display = 'block';
+            cartContainer.style.display = 'none';
+            cartContainer.classList.remove('cart-container-active');
+        })
+    }
+    
+    function cartMobileStyle() {
+        mainPage.style.display ='none';
+        document.body.style.backgroundColor = '#fff';
+        cartContainer.classList.add('cart-container-active');
+        cartContainer.style.display = 'block';
+        cartProductImage = document.getElementsByClassName('cart-product-image');
+        for (let images of cartProductImage){
+            images.style.width = '40%';
+        }
+    }
+
+    return {
+        backButton,
+        cartMobileStyle
+    }
+}
+
+buttonCartMobile.addEventListener('click', function(e){
+    e.preventDefault();
+    const mobileCart = cartForMobile();
+    mobileCart.backButton();
+    mobileCart.cartMobileStyle();
+});
+
 // Hover functionality with event listener //
 const products = document.querySelectorAll('#products div');
 
