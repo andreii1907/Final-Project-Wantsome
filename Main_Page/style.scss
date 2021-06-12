@@ -1,5 +1,5 @@
 @import '../Assets/mixins';
-@import '../Assets/fonts';
+@import '../Assets/fonts-colors';
 
 * {
     box-sizing: border-box;
@@ -7,7 +7,7 @@
 
 body {
     margin: 0;
-    background-color: #f7f7f7;
+    background-color: $body-color;
     position: relative;
 }
 
@@ -26,7 +26,7 @@ header {
         a {
             margin-right: 20px;
             text-decoration: none;
-            color: #000;
+            color: $secondary-color;
             font-weight: 700;
             font-family: $primary-font;
         }
@@ -37,8 +37,8 @@ header {
     }
 
     #cancel{
-        color: #000;
-        background-color: #fff;
+        color: $secondary-color;
+        background-color: $primary-color;
     }
 
     img {
@@ -75,7 +75,7 @@ header {
         
         p {
             margin: 0;
-            color: #fff;
+            color: $primary-color;
             text-align: center;
             z-index: 2;
             margin-top: 10px;
@@ -116,7 +116,7 @@ header {
             flex-basis: 20%;
             @include display();
             position: relative;
-            background-color: #fff;
+            background-color: $primary-color;
 
             &::after{
                 @include after();
@@ -231,7 +231,7 @@ header {
 
         a {
             text-decoration: none;
-            color: #000;
+            color: $secondary-color;
             font-size: 18px;
             font-family: $primary-font;
             font-weight: 700;
@@ -273,15 +273,15 @@ header {
             @include btn();
             width: 50%;
             border-radius: 10px;
-            border:1px solid black;
-            color: #000;
+            border:1px solid $secondary-color;
+            color: $secondary-color;
             font-size: 14px;
             transition: all 0.3s linear;
             margin-bottom: 10px;
 
             &:hover{
                 @include btn-hover();
-                border: 1px solid black;
+                border: 1px solid $secondary-color;
 
                 &:hover::after{
                     @include after();
@@ -355,8 +355,8 @@ footer{
         margin-top: 30px;
         width: 100%;
         position: relative;
-        background-color: #f7f7f7;
-        border: 10px solid #fff;
+        background-color: $body-color;
+        border: 10px solid $primary-color;
         
         small{
             display: block;
