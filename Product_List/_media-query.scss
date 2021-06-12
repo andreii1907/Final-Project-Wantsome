@@ -1,4 +1,8 @@
 @media (max-width: 599px) {
+
+    body{
+        background-color: $primary-color;
+    }
     #cart-container{
         display: none;
         h2{
@@ -28,6 +32,86 @@
     #cart-container #cart-items, #cart-container h3{
         margin-left: 0%;
         width: auto;
+    }
+
+    #search-section{
+        margin: 0;
+        padding: 10px;
+    
+        #search-bar{
+            width: 100%;
+    
+            input, button{
+                font-size: 12px;
+            }
+        }
+    }
+
+    #arrow-down-filter{
+        display: block;
+        
+        i{
+            margin-bottom: 10px;
+        }
+    }
+
+    #filtring-and-list{
+        margin: 0;
+        flex-direction: column;
+
+        aside{
+            width: 100%;
+            font-size: 12px;
+            margin-top: -700px;
+
+            .filtring{
+                margin:0;
+                margin-bottom: 10px;
+                label{
+                    font-size: 12px;
+                } 
+            }
+        }
+
+        main{
+            margin-top: 130px;
+            width: 100%;
+
+            h2{
+                display: none;
+            }
+
+            #sort{
+                font-size: 12px;
+                margin: 10px;
+                margin-top: 15px;
+
+                #selectors{
+                    width: auto;
+                    font-size: 12px;
+
+                    select{
+                        font-size: 12px;
+                    }
+                }
+            }
+
+            #products{
+                margin: 10px;
+
+                div{
+                    height: 25vh;
+                    flex-direction: column;
+                    justify-content: flex-end;
+
+                    small, button{
+                        display: block;
+                        padding: 2px;
+                        font-size: 8px;
+                    }
+                }
+            }
+        }
     }
 
     header{
@@ -126,18 +210,18 @@
 
 @media (min-width: 900px) and (max-width: 1200px) {
     
-    #product-description{
-        height: 930px;
-        #product-details{
-            ul{
-                margin-right: 20px;
+    #filtring-and-list{
+        main{
+            #sort{
+                #selectors{
+                    width: auto;
+                }
             }
 
-            #sizes-btn{
-                button{
-                    width: 35px;
-                    height: 35px;
-                    font-size: 10px;
+            #products{
+                div{
+                    height: 25vh;
+
                 }
             }
         }
@@ -168,6 +252,7 @@
             }
         }
     }
+    
     header{
         height: 50px;
 
@@ -184,75 +269,37 @@
         }
     }
 
-    #product-description{
-        height: 800px;
-
-        #product-image{
-            width: 50vw;
-        }
-
-        #product-details{
-            margin-left: 20px;
-            
-            #stars{
-                small{
-                    font-size: 12px;
-                }
-            }    
-
-            ul{
-                margin-right: 20px;
+     #filtring-and-list{
+        main{
+            #sort{
                 font-size: 12px;
-            }
+                margin: 10px;
+                margin-top: 15px;
 
-            h3{
-                font-size: 14px;
-            }
+                #selectors{
+                    width: auto;
+                    font-size: 12px;
 
-            #sizes-btn{
-                button{
-                    width: 30px;
-                    height: 30px;
-                    font-size: 8px;
-                }
-            }
-
-            #popup{
-                    right: 0;
-                    #myPopup{
+                    select{
                         font-size: 12px;
                     }
-            }
-
-            #another-img{
-                margin: 20px 0;
-            }
-
-        }
-    }
-
-    #suggestions-men{
-        padding-top: 15px;
-
-        h2{
-            font-size: 16px;
-            margin-top: 10px;
-        }
-        .suggested-articles {  
-            height: 45vh;
-            margin-top: -25px;
-            
-            .cards{
-                height: 70%;
-
-                .card-btn{
-                    bottom: 10px;
-                    height: 10%;
-                    width: 70%;
-                    padding: 0;
-                    font-size: 12px;
                 }
-            }    
+            }
+
+            #products{
+                margin: 10px;
+
+                div{
+                    height: 20vh;
+                    justify-content: flex-end;
+
+                    small, button{
+                        display: block;
+                        padding: 2px;
+                        font-size: 8px;
+                    }
+                }
+            }
         }
     }
 
