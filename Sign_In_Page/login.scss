@@ -1,5 +1,5 @@
 @import '../Assets/mixins';
-@import '../Assets/fonts';
+@import '../Assets/fonts-colors';
 
 *{
     box-sizing: border-box;
@@ -8,7 +8,7 @@
 body{
     height: 100vh;
     margin: 0;
-    background-color: rgb(247, 247, 247);
+    background-color: $body-color;
 }
 
 .container{
@@ -34,7 +34,7 @@ body{
             height: 100%;
             top: 0;
             left: 0;
-            background-color: black;
+            background-color: $secondary-color;
             opacity: 0.4;
             transition: opacity 0.5s linear;
         }
@@ -48,7 +48,7 @@ body{
         height: 100%;
         width: 40%;
         @include display();
-        color: #fff;
+        color: $primary-color;
         text-align: center;
         font-weight: 700;
         position: relative;
@@ -66,10 +66,10 @@ body{
             height: 50px;
             padding: 10px;
             border-radius: 4px;
-            border: 3px solid #fff;
+            border: 3px solid $primary-color;
             cursor: pointer;
             background:none;
-            color: #fff;
+            color: $primary-color;
             font-weight: 700;
             transition-property: width, height;
             transition-duration: 0.3s;
@@ -77,8 +77,8 @@ body{
 
 
             &:hover{
-                background-color: #fff;
-                color: #000;
+                background-color: $primary-color;
+                color: $secondary-color;
                 height: 60px;
                 width: 130px;
             }
@@ -87,8 +87,7 @@ body{
 
     .right{
         width: 50%;
-        background-color: #fff;
-
+        background-color: $primary-color;
         .sign-in{
             height: 100%;
             @include display(); 
@@ -108,8 +107,8 @@ body{
                 @include display();
                 width: 70%;
                 height: 35%;
-                background-color:  rgb(247, 247, 247);
-                border: 1px solid rgb(201, 200, 200);
+                background-color:  $body-color;
+                border: 1px solid $form-color;
                 border-radius: 4px;
                 box-shadow: 5px 10px 18px #888888;
                 padding: 20px;
@@ -152,22 +151,22 @@ body{
                 padding: 5px;
                 border-radius: 4px;
                 cursor: pointer;
-                background-color: #000;
-                color: #fff;
+                background-color: $secondary-color;
+                color: $primary-color;
                 font-weight: 700;
                 margin-bottom: 25px;
                 transition: all 0.5s linear;
 
                 &:hover{
-                    background-color: #fff;
-                    color: #000;
+                    background-color: $primary-color;
+                    color: $secondary-color
                 }
             }
 
             a{
                 text-align: center;
                 font-size: 14px;
-                color: #000;
+                color: $secondary-color;
             }
         }
     }
