@@ -266,13 +266,6 @@ header {
                     font-family: $second-font;
                     width: 85%;
                 }
-
-            }
-
-            #reset-div{
-                button{
-                    @include btn-list-page;
-                }
             }
         }
 

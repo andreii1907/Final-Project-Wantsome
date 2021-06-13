@@ -57,23 +57,19 @@
             <div class="filtring" id="price-filtering">
               <form>
               <p>Filter by price</p>
-              <div class="inputs">
-                <input type="checkbox" id="filtring1" name="filter-pricing">
-                <label for="filtring1">< 29.99</label>
-              </div>
-              <div class="inputs">
+              <div class="inputs filtring-price-one">
                 <input type="checkbox" id="filtring2" name="filter-pricing">
                 <label for="filtring2">29.99-39.99</label>
               </div>
-              <div class="inputs">
+              <div class="inputs filtring-price-two">
                 <input type="checkbox" id="filtring3" name="filter-pricing">
                 <label for="filtring3">39.99-49.99</label>
               </div>
-              <div class="inputs">
+              <div class="inputs filtring-price-three">
                 <input type="checkbox" id="filtring4" name="filter-pricing">
                 <label for="filtring4">49.99-59.99</label>
               </div> 
-              <div class="inputs"> 
+              <div class="inputs filtring-price-four"> 
                 <input type="checkbox" id="filtring5" name="filter-pricing">
                 <label for="filtring5">> 59.99</label>
               </div>
@@ -116,9 +112,9 @@
             <div id="selectors">
               <label for="sort">Sort By Price
                 <select id="sort1">
-                  <option value="null">Select area</option>
-                  <option value="higher-price">Higher price</option>
-                  <option value="lower-price">Lower price</option>
+                  <option id="nullPrice" value="null">Select area</option>
+                  <option id="higher" value="higher-price">Higher price</option>
+                  <option id="lower" value="lower-price">Lower price</option>
                 </select>
               </label>
               <label for="sort2">Sort Alphabetical
@@ -128,9 +124,6 @@
                   <option>Z-A</option>
                 </select>
               </label>
-            </div>
-            <div id="reset-div">
-              <button type="button">Reset</button>
             </div>
           </div>
           <div id="products"></div>

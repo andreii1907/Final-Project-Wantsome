@@ -148,24 +148,51 @@ const tshirtsModels = [
     },
 ];
 
-const productsList = document.getElementById('products');
+let productsList = document.getElementById('products');
+let currentStateView = [];
 
-for (model of tshirtsModels){
-    const divProduct = document.createElement('div');
-    divProduct.style.backgroundImage = 'url('+ model.url +')';
-    productsList.appendChild(divProduct);
-    const productsPrice = document.createElement('small');
-    productsPrice.textContent = `€${model.price}`;
-    divProduct.appendChild(productsPrice);
-    const addToCartButton = document.createElement('button');
-    addToCartButton.textContent = 'Add to Cart';
-    divProduct.appendChild(addToCartButton);
-    const seeDetails = document.createElement('button');
-    seeDetails.textContent = 'Details';
-    divProduct.appendChild(seeDetails);
+function generateView(models){
+    currentStateView = models;
+    productsList.innerHTML = '';
+    for (model of tshirtsModels){
+        const divProduct = document.createElement('div');
+        divProduct.style.backgroundImage = 'url('+ model.url +')';
+        productsList.appendChild(divProduct);
+        const productsPrice = document.createElement('small');
+        productsPrice.classList = `${model.price}`;
+        productsPrice.textContent = `€${model.price}`;
+        divProduct.appendChild(productsPrice);
+        const addToCartButton = document.createElement('button');
+        addToCartButton.textContent = 'Add to Cart';
+        divProduct.appendChild(addToCartButton);
+        const seeDetails = document.createElement('button');
+        seeDetails.textContent = 'Details';
+        divProduct.appendChild(seeDetails);
+    }
+    hoverEvent();
 }
 
+const products = document.querySelectorAll('#products div');
 
+function hoverEvent(){
+    for (let prod of products){
+        prod.addEventListener('mouseover', function(){
+            const priceText = prod.firstChild;
+            const addButton = prod.children[1];
+            const seeDetails = prod.children[2];
+            priceText.style.display = 'block';
+            addButton.style.display = 'block';
+            seeDetails.style.display = 'block';
+
+            prod.addEventListener('mouseout', function(){
+                priceText.style.display = 'none';
+                addButton.style.display = 'none';
+                seeDetails.style.display = 'none';
+            })
+        })
+    }
+}
+generateView(tshirtsModels);
 
 // Cart Button // 
 
@@ -227,25 +254,6 @@ buttonCartMobile.addEventListener('click', function(e){
     mobileCart.cartMobileStyle();
 });
 
-// Hover functionality with event listener //
-const products = document.querySelectorAll('#products div');
-
-for (let prod of products){
-    prod.addEventListener('mouseover', function(){
-        const priceText = prod.firstChild;
-        const addButton = prod.children[1];
-        const seeDetails = prod.children[2];
-        priceText.style.display = 'block';
-        addButton.style.display = 'block';
-        seeDetails.style.display = 'block';
-
-        prod.addEventListener('mouseout', function(){
-            priceText.style.display = 'none';
-            addButton.style.display = 'none';
-            seeDetails.style.display = 'none';
-        })
-    })
-}
 
 // Clear radio buttons // 
 const clearBtn = document.getElementById('clear');
@@ -258,4 +266,34 @@ clear.addEventListener('click', function(e){
     }
 });
 
+// Sort Part // 
+const sortSelectByPrice = document.getElementById('sort1');
+
+sortSelectByPrice.addEventListener('change', function(e){
+    console.log(e.target.value);
+    if (e.target.value === "higher-price"){
+        currentStateView.sort((a, b) => (a.price > b.price) ? -1 : 1);
+        console.log(currentStateView)
+    } else if (e.target.value === "lower-price") {
+        currentStateView.sort((a, b) => (a.price > b.price) ? 1 : -1);
+        console.log(currentStateView);
+    } 
+    generateView(currentStateView);
+});
+
+const sortSelectByName = document.getElementById('sort2');
+
+sortSelectByName.addEventListener('change', function(e){
+    console.log(e.target.value);
+    if (e.target.value === "A-Z"){
+        currentStateView.sort((a, b) => (a.name > b.name) ? 1 : -1);
+        console.log(currentStateView);
+    } else if (e.target.value === "Z-A") {
+        currentStateView.sort((a, b) => (a.name > b.name) ? -1 : 1);
+        console.log(currentStateView);
+    } 
+    generateView(currentStateView);
+});
+
+// Filtring // 
 
