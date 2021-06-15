@@ -172,9 +172,8 @@ function generateView(models){
     hoverEvent();
 }
 
-const products = document.querySelectorAll('#products div');
-
 function hoverEvent(){
+    const products = document.querySelectorAll('#products div');
     for (let prod of products){
         prod.addEventListener('mouseover', function(){
             const priceText = prod.firstChild;
@@ -255,6 +254,28 @@ buttonCartMobile.addEventListener('click', function(e){
 });
 
 
+// Filter for mobile //
+const mobileFilter = document.getElementById('filtering');
+const upArrow = document.getElementById('up');
+const downArrow = document.getElementById('down');
+const list = document.getElementById('list');
+
+downArrow.addEventListener("click", function(event){
+    event.preventDefault;
+    mobileFilter.style.marginTop = '0';
+    list.style.marginTop = '0';
+    downArrow.style.display = 'none';
+    upArrow.style.display = 'block';
+});
+
+upArrow.addEventListener("click", function(event){
+    event.preventDefault();
+    mobileFilter.style.marginTop = '-700px';
+    list.style.marginTop = '170px';
+    upArrow.style.display = 'none';
+    downArrow.style.display = 'block';
+});
+
 // Clear radio buttons // 
 const clearBtn = document.getElementById('clear');
 
@@ -270,13 +291,10 @@ clear.addEventListener('click', function(e){
 const sortSelectByPrice = document.getElementById('sort1');
 
 sortSelectByPrice.addEventListener('change', function(e){
-    console.log(e.target.value);
     if (e.target.value === "higher-price"){
         currentStateView.sort((a, b) => (a.price > b.price) ? -1 : 1);
-        console.log(currentStateView)
     } else if (e.target.value === "lower-price") {
         currentStateView.sort((a, b) => (a.price > b.price) ? 1 : -1);
-        console.log(currentStateView);
     } 
     generateView(currentStateView);
 });
@@ -284,13 +302,10 @@ sortSelectByPrice.addEventListener('change', function(e){
 const sortSelectByName = document.getElementById('sort2');
 
 sortSelectByName.addEventListener('change', function(e){
-    console.log(e.target.value);
     if (e.target.value === "A-Z"){
         currentStateView.sort((a, b) => (a.name > b.name) ? 1 : -1);
-        console.log(currentStateView);
     } else if (e.target.value === "Z-A") {
         currentStateView.sort((a, b) => (a.name > b.name) ? -1 : 1);
-        console.log(currentStateView);
     } 
     generateView(currentStateView);
 });
