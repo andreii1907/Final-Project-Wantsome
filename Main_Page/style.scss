@@ -97,26 +97,66 @@ header {
 
 #suggestions-men, #suggestions-women {
     @include background-margin-all();
-    padding-top: 45px;
+    overflow: hidden;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    margin-bottom: -90px;
     h2 {
-        margin: 0;
         text-align: center;
-        font-family: $primary-font;
+        font-family: $second-font;
     }
 
-    .suggested-articles {
-        height: 70vh;
-        @include display();
-        flex-direction: row;
-        justify-content: space-evenly;
+    .controls {
+        display: flex;
+        position: absolute;
+        top: 45%;
+        left: 0;
+        justify-content: space-between;
+        width: 100%;
+        z-index: 99999;
+        transition: all ease 0.5s;
         
+        .control {
+          margin: 0 5px;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          height: 40px;
+          width: 40px;
+          border-radius: 50%;
+          background-color: rgba(255, 255, 255, 0.7);
+          opacity: .5;
+          transition: ease .3s;
+          cursor: pointer;
+
+          &:hover{
+              opacity: 1;
+          }
+        }
+    }
+      
+    .suggested-articles {
+        width: 98%;
+        height: 70vh;
+        display: flex;
+        justify-content: left;
+        overflow-x: auto;
+        margin-left: 5px;
+
+        &::-webkit-scrollbar{
+            visibility: hidden;
+        }
         
         .cards{
             height: 85%;
-            flex-basis: 20%;
+            min-width: 320px;
             @include display();
             position: relative;
             background-color: $primary-color;
+            margin: 0px 20px;
+            left: 0;
+            transition: flex 0.5s linear;
 
             &::after{
                 @include after();
@@ -174,11 +214,29 @@ header {
         background-image: url(https://cdn.shopify.com/s/files/1/0014/6217/3742/products/11A2230W-MRFL--10435_1600x.jpg?v=1617031589);
         @include background-sets(); 
     }
-}
-
-#suggestions-men{
-    h2{
-        margin-bottom: -20px;
+    .cards:nth-of-type(5) {
+        background-image: url(https://cdn.shopify.com/s/files/1/0014/6217/3742/products/113044-8800A.2.INTERNATIONAL_BLUE_2000x.jpg?v=1577724253);
+        @include background-sets(); 
+    }
+    .cards:nth-of-type(6) {
+        background-image: url(https://sslimages.shoppersstop.com/sys-master/images/h16/ha2/15034468761630/206339118_WHITE.jpg_1088Wx1632H);
+        @include background-sets(); 
+    }
+    .cards:nth-of-type(7) {
+        background-image: url(https://sslimages.shoppersstop.com/sys-master/images/h73/hcc/15016301723678/206369554_BLACK.jpg_1088Wx1632H);
+        @include background-sets(); 
+    }
+    .cards:nth-of-type(8) {
+        background-image: url(https://assets.ajio.com/medias/sys_master/root/h99/hcb/11766572515358/-1117Wx1400H-440934187-navy-MODEL.jpg);
+        @include background-sets(); 
+    }
+    .cards:nth-of-type(9) {
+        background-image: url(https://assets.ajio.com/medias/sys_master/root/h3a/h83/13344055427102/-1117Wx1400H-460315329-yellow-MODEL.jpg);
+        @include background-sets(); 
+    }
+    .cards:nth-of-type(10) {
+        background-image: url(https://assets.ajio.com/medias/sys_master/root/20210216/ZyXH/602ad1f5aeb26969816627f5/-473Wx593H-460846833-yellow-MODEL.jpg);
+        @include background-sets(); 
     }
 }
 
@@ -201,6 +259,24 @@ header {
     .cards:nth-of-type(4) {
         background-image: url(https://cdn.shopify.com/s/files/1/0014/6217/3742/products/215186ZH-EVBL--5608_1200x.jpg?v=1600361327);
     }
+    .cards:nth-of-type(5) {
+        background-image: url(https://cdn11.nnnow.com/web-images/large/styles/FC7NAVCJLDV/1584005032504/1.jpg);
+    }
+    .cards:nth-of-type(6) {
+        background-image: url(https://cdn.shopify.com/s/files/1/0014/6217/3742/products/2149430H-EVBL_1_1200x.jpg?v=1570019785);
+    }
+    .cards:nth-of-type(7) {
+        background-image: url(https://cdn.shopify.com/s/files/1/0014/6217/3742/products/212678ZH-NVRD--0612_1200x.jpg?v=1598552957);
+    }
+    .cards:nth-of-type(8) {
+        background-image: url(https://cdn.shopify.com/s/files/1/0014/6217/3742/products/2151100H-OPWH_1_1600x.jpg?v=1581094303);
+    }
+    .cards:nth-of-type(9) {
+        background-image: url(https://cdn.shopify.com/s/files/1/0014/6217/3742/products/2149720H-OWCL_1_6cbd1739-ed52-43e1-b6d0-45abcd4f6b22_1200x.jpg?v=1598551476);
+    }
+    .cards:nth-of-type(10) {
+        background-image: url(https://cdn.shopify.com/s/files/1/0014/6217/3742/products/212201PO-GRYP_1_11c57584-7af0-4e59-ab78-d9429d189527_1200x.jpg?v=1598555159);
+    }
 }
 
 
@@ -208,10 +284,12 @@ header {
     @include background-margin-all();
     border-bottom: 1px solid rgba(0, 0, 0, 0.301);
     @include display();
+    margin-top: 30px;
 
     img{
        width: 10%;
        height: 10%;
+       z-index: 50;
     }
 
     #join-part, #p-part {
