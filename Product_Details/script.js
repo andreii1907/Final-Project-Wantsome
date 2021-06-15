@@ -109,7 +109,7 @@ const cartItems = document.getElementById('cart-items');
 const productPrice = document.getElementById('product-price');
 const chosenSize = document.getElementsByClassName('clicked-size');
 const url = mainImg.style.backgroundImage.slice(5, -2);
-const priceList = [];
+let priceList = 0;
 
 
 function addToCart(){
@@ -125,7 +125,7 @@ function addToCart(){
         price.classList.add('prices');
         price.textContent = `Price: ${productPrice.textContent}`;
         product.appendChild(price);
-        priceList.push(price.textContent);
+        priceList += Number(price.textContent.slice(8, 13)) * input.value;
         const quantity = document.createElement('p');
         quantity.textContent = `Quantity: ${input.value}`;
         product.appendChild(quantity);
@@ -137,18 +137,11 @@ function addToCart(){
     const total = document.getElementById('total');
     const totalMainPage = document.getElementById('value');
     const removeButton = document.createElement('button');
-
+    
     function totalCalc() {
-        const priceListValue = [];
-        for (let price of priceList){
-            let priceValue = Number(price.slice(8, 13));
-            priceListValue.push(priceValue);
-            console.log(priceListValue);
-        }
-        const reducer = (accumulator, currentvalue) => accumulator + currentvalue;
-        let totalValue = priceListValue.reduce(reducer);
-        total.textContent = totalValue;
-        totalMainPage.textContent = totalValue;
+        console.log(priceList);
+        total.textContent = priceList.toFixed(2);
+        totalMainPage.textContent = priceList.toFixed(2);
     }
 
     function removeAction(){
@@ -158,20 +151,20 @@ function addToCart(){
                 prod.appendChild(removeButton);
                 prod.classList.add('prod');   
             }
-
             removeButton.addEventListener('click', function(e){
                 e.preventDefault();
                 e.stopPropagation();
                 removeButton.parentElement.remove();
-                let listOfPrices = document.getElementsByClassName('prices');
                 const priceOfRemovedItem = removeButton.parentElement.children[1].textContent.slice(8,13);
-                const totalTrasnsformed = Number(total.textContent - priceOfRemovedItem).toFixed(2);
-                if (listOfPrices.length < 1) {
-                    total.textContent = 'Total' 
+                const quantityOfRemovedItem = Number(removeButton.parentElement.children[2].textContent.slice(10,11));
+                console.log(quantityOfRemovedItem);
+                priceList -=priceOfRemovedItem * quantityOfRemovedItem;
+                if (priceList < 1) {
+                    total.textContent = 'Total';
                     totalMainPage.textContent = '0.00';
-                } else{
-                    total.textContent = totalTrasnsformed;
-                    totalMainPage.textContent = totalTrasnsformed;   
+                } else {
+                    total.textContent = priceList.toFixed(2);
+                    totalMainPage.textContent = priceList.toFixed(2); 
                 }
             })
         }
@@ -181,8 +174,6 @@ function addToCart(){
             totalCalc
         }        
     }
-    
-    
 
 addToCartButton.addEventListener('click', function(e){
     e.stopPropagation();
