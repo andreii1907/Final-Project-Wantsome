@@ -27,6 +27,10 @@
         h3{
             font-size: 14px;
         }
+        #placeOrder{
+            margin-left: 40%;
+            height: auto;
+        }
     }
 
     #cart-container #cart-items, #cart-container h3{
@@ -237,9 +241,9 @@
     }
     
     #cart-container{
-        #cart-items, h3{
+        #cart-items, h3, #placeOrder{
             width: 25%;
-            margin-left: 10%;
+            margin-left: 22%;
             h2{
                 font-size: 14px;
             }
@@ -253,6 +257,9 @@
             h3{
                 font-size: 14px;
             }
+        }
+        #placeOrder{
+            height: auto;
         }
     }
     

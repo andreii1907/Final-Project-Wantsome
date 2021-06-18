@@ -312,3 +312,5 @@ sortSelectByName.addEventListener('change', function(e){
 
 // Filtring // 
 
+
+
