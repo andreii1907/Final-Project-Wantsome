@@ -189,9 +189,10 @@
         }
         .suggested-articles {  
             height: 25vh;
-            
+             
             .cards{
-                height: 70%;
+                min-width: 46%;
+                height: 80%;
                 background-position: top center;
                 
                 .card-btn{
@@ -351,10 +352,17 @@
         h2{
             font-size: 16px;
             margin-top: 10px;
+            margin-bottom: 40px;
+        }
+
+        .controls{
+            top: 40%;
         }
         .suggested-articles {  
             height: 45vh;
             margin-top: -25px;
+
+            
             
             .cards{
                 height: 70%;

@@ -27,6 +27,12 @@
             }    
         }
     }
+
+    #suggestions-women{
+        .controls{
+            top: 45%;
+        }
+    }
     
     #membership-section {
         img{
@@ -107,6 +113,10 @@
         h2{
             font-size: 16px;
         }
+
+        .controls{
+            top:40%;
+        }
         .suggested-articles {  
             height: 40vh;
             
@@ -126,6 +136,9 @@
     #suggestions-women{
         h2{
            margin-top: -5px;
+        }
+        .controls{
+            top: 35%;
         }
     }
     
@@ -350,7 +363,6 @@
             
             .cards{
                 min-width: 46%;
-                width: 50%;
                 height: 80%;
                 background-position: top center;
                 .card-btn{
@@ -377,6 +389,9 @@
 
     #suggestions-women{
         margin-top: -40px;
+        .controls{
+            top:45%;
+        }
     }
 
      #collections-description{

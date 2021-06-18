@@ -318,6 +318,7 @@ header {
                     transition: all 0.2s linear;
                     align-items: center;
                     justify-content: center;
+                    z-index: 50;
                     i{
                         margin-right: 8px;
                     }
@@ -334,26 +335,67 @@ header {
 
 #suggestions-men{
     @include background-margin-all();
-    padding-top: 45px;
+    overflow: hidden;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    margin-bottom: -90px;
     h2 {
-        margin: 0;
+        margin: 20px 0;
         text-align: center;
         font-family: $primary-font;
     }
 
+    .controls {
+        display: flex;
+        position: absolute;
+        top: 45%;
+        left: 0;
+        justify-content: space-between;
+        width: 100%;
+        z-index: 99999;
+        transition: all ease 0.5s;
+        
+        .control {
+          margin: 0 5px;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          height: 40px;
+          width: 40px;
+          border-radius: 60%;
+          background-color: $secondary-color;
+          color: $primary-color;
+          opacity: .8;
+          transition: ease .3s;
+          cursor: pointer;
 
+          &:hover{
+              opacity: 1;
+          }
+        }
+    }
+      
     .suggested-articles {
-        height: 50vh;
-        @include display();
-        flex-direction: row;
-        justify-content: space-evenly;
+        width: 98%;
+        height: 70vh;
+        display: flex;
+        justify-content: left;
+        margin-left: 5px;
 
+        &::-webkit-scrollbar{
+            visibility: hidden;
+        }
+        
         .cards{
-            height: 85%;
-            flex-basis: 20%;
+            height: 60vh;
+            min-width: 30%;
             @include display();
             position: relative;
             background-color: $primary-color;
+            margin: 0 1.9%;
+            left: 0;
+            transition: flex 0.5s linear;
 
             &::after{
                 @include after();
@@ -361,35 +403,36 @@ header {
                 border-radius: 10px;
                 transition: opacity 0.5s linear;
             }
-
+    
             &:hover::after{
                 opacity: 0;
             }
-
-        
-
+    
+            
+    
             .card-btn {
-            @include btn();
-            position: absolute;
-            bottom: 30px;
-            transition: all 0.3s linear;
-            z-index: 1;
-
+               @include btn();
+               position: absolute;
+               bottom: 30px;
+               transition: all 0.3s linear;
+               z-index: 1;
+    
                 &:hover{
                     @include btn-hover();
                     font-weight: 700;
-            
+                
                     &::after{
                         @include after();
                         z-index: -1;
                         opacity: 0.6;
                     }
                 }
-
+    
             }
         }
     }
 }
+
 
 
 
@@ -412,17 +455,36 @@ header {
     background-image: url(https://cdn.shopify.com/s/files/1/0014/6217/3742/products/11A2230W-MRFL--10435_1600x.jpg?v=1617031589);
     @include background-sets(); 
 }
-
+.cards:nth-of-type(5) {
+    background-image: url(https://cdn.shopify.com/s/files/1/0014/6217/3742/products/113044-8800A.2.INTERNATIONAL_BLUE_2000x.jpg?v=1577724253);
+    @include background-sets(); 
+}
+.cards:nth-of-type(6) {
+    background-image: url(https://sslimages.shoppersstop.com/sys-master/images/h16/ha2/15034468761630/206339118_WHITE.jpg_1088Wx1632H);
+    @include background-sets(); 
+}
+.cards:nth-of-type(7) {
+    background-image: url(https://sslimages.shoppersstop.com/sys-master/images/h73/hcc/15016301723678/206369554_BLACK.jpg_1088Wx1632H);
+    @include background-sets(); 
+}
+.cards:nth-of-type(8) {
+    background-image: url(https://assets.ajio.com/medias/sys_master/root/h99/hcb/11766572515358/-1117Wx1400H-440934187-navy-MODEL.jpg);
+    @include background-sets(); 
+}
+.cards:nth-of-type(9) {
+    background-image: url(https://assets.ajio.com/medias/sys_master/root/h3a/h83/13344055427102/-1117Wx1400H-460315329-yellow-MODEL.jpg);
+    @include background-sets(); 
+}
 
 footer{
     @include background-margin-all();
     border-top: 1px solid rgba(0, 0, 0, 0.301);
-    
 
     #bottom-section{
         display: flex;
         flex-direction: row;
         justify-content: space-evenly;
+        margin-top: 50px;
 
         .footer-section{
 
