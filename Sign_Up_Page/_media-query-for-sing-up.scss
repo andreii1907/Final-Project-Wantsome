@@ -2,6 +2,7 @@
     .container {
       display: flex;
       flex-direction: column;
+      justify-content: space-evenly;
       margin: 0;
   
       .left {
@@ -44,7 +45,6 @@
                     
             form {
                 width: 50%;
-                height: 60%;
                 
                 label{
                     font-size: 14px;
@@ -106,8 +106,7 @@
                   }
                       
               form {
-                  width: 80%;
-                  height: 60%;      
+                  width: 80%;     
                  
                   label{
                       font-size: 6px;

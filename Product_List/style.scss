@@ -18,11 +18,12 @@ body {
     width: 100%;
     overflow: hidden;
     position: relative;
+    margin-left: 0;
 }
 
 #main-part{
     width: 100%;
-    transition: all 0.3s linear;
+    transition: 0.3s linear;
     position: relative;
 }
 

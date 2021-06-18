@@ -318,7 +318,7 @@ header {
                     transition: all 0.2s linear;
                     align-items: center;
                     justify-content: center;
-                    z-index: 50;
+                    z-index: 2;
                     i{
                         margin-right: 8px;
                     }
@@ -343,7 +343,7 @@ header {
     h2 {
         margin: 20px 0;
         text-align: center;
-        font-family: $primary-font;
+        font-family: $second-font;
     }
 
     .controls {
