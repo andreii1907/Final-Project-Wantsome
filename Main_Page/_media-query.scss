@@ -29,6 +29,9 @@
     }
     
     #membership-section {
+        img{
+            margin: 0;
+        }
         #anchor-tags{
             width: 15%;
         }
@@ -120,20 +123,18 @@
         }
     }
 
-    #suggestions-men{
-        h2{
-            margin-bottom: -40px;
-            margin-top: -10px;
-        }
-    }
-
     #suggestions-women{
         h2{
-           margin: -30px 0;
+           margin-top: -5px;
         }
     }
     
     #membership-section {
+
+        img{
+            margin-top: 0;
+            width: 20%;
+        }
 
         #join-part{
             font-size: 16px;
@@ -149,10 +150,6 @@
             a{
                 font-size: 14px;
             }
-        }
-
-        img{
-            width: 25%;
         }
     } 
 
@@ -282,6 +279,7 @@
         }
 
         img{
+            margin-top: 0;
             width: 25%;
         }
     } 
@@ -342,20 +340,19 @@
 
     #suggestions-men, #suggestions-women{
         margin: 0;
+        padding: 0;
 
         h2{
             font-size: 14px;
-            margin-bottom: 0;
         }
         .suggested-articles {  
-            height: 25vh;
+            height: 30vh;
             
             .cards{
-                min-width: 144px;
+                min-width: 46%;
                 width: 50%;
                 height: 80%;
                 background-position: top center;
-                
                 .card-btn{
                     bottom: 10px;
                     height: 10%;
@@ -378,14 +375,14 @@
         }
     }
 
-    #suggestions-men{
-        padding-top: 25px;
+    #suggestions-women{
+        margin-top: -40px;
     }
 
      #collections-description{
          margin: 0;
         .collection-card{
-            height: 35vh;
+            height: 30vh;
             width: 30vw;
 
             h3{
