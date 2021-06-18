@@ -106,7 +106,7 @@ body{
             form{
                 @include display();
                 width: 70%;
-                height: 40%;
+                height: 350px;
                 background-color:  $body-color;
                 border: 1px solid $form-color;
                 border-radius: 4px;

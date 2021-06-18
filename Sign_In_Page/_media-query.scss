@@ -44,8 +44,6 @@
               }
                   
           form {
-              height: 75%;
-              
               label{
                   font-size: 16px;
               }
@@ -101,8 +99,7 @@
                     
             form {
                 width: 50%;
-                height: 65%;
-                
+
                 label{
                     font-size: 12px;
                 }
@@ -158,6 +155,8 @@
                 height: 100px;
                 width: 100px;
                 margin: 20px 0 -20px 0;
+                margin-bottom: -100px;
+                z-index: 3;
             }
 
             a{
@@ -167,7 +166,6 @@
                     
             form {
                 width: 100%;
-                height:100%;
                 background-color: #fff;
                 box-shadow: none;
                 border: none;
