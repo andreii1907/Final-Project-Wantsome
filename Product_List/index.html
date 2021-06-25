@@ -57,21 +57,20 @@
             <div class="filtring" id="price-filtering">
               <form>
               <p>Filter by price</p>
-              <div class="inputs filtring-price-one">
-                <input type="checkbox" id="filtring2" name="filter-pricing">
-                <label for="filtring2">29.99-39.99</label>
+              <div class="inputs">
+                <button type="button" id="filtring1" name="filter-pricing">< 29.99</button>
               </div>
-              <div class="inputs filtring-price-two">
-                <input type="checkbox" id="filtring3" name="filter-pricing">
-                <label for="filtring3">39.99-49.99</label>
+              <div class="inputs">
+                <button type="button" id="filtring2" name="filter-pricing">29.99-39.99</button>
               </div>
-              <div class="inputs filtring-price-three">
-                <input type="checkbox" id="filtring4" name="filter-pricing">
-                <label for="filtring4">49.99-59.99</label>
+              <div class="inputs">
+                <button type="button" id="filtring3" name="filter-pricing">39.99-49.99</button>
+              </div>
+              <div class="inputs">
+                <button type="button" id="filtring4" name="filter-pricing">49.99-59.99</button>
               </div> 
-              <div class="inputs filtring-price-four"> 
-                <input type="checkbox" id="filtring5" name="filter-pricing">
-                <label for="filtring5">> 59.99</label>
+              <div class="inputs"> 
+                <button type="button" id="filtring5" name="filter-pricing">> 59.99</button>
               </div>
             </form>
             </div>
@@ -79,12 +78,10 @@
               <form action="">
                 <p>Filter by gender</p>
                 <div class="inputs">
-                  <input type="checkbox" id="filtring-mens" name="filter-gender">
-                  <label for="filtring-mens">Mens</label>
+                  <button type="button" id="filtring-mens" name="filter-gender">Mens</button>
                 </div>
                 <div class="inputs">
-                  <input type="checkbox" id="filtring-womens" name="filter-gender">
-                  <label for="filtring-womens">Womens</label>
+                  <button type="button" id="filtring-womens" name="filter-gender">Womens</button>
                 </div>
               </form>
             </div>
@@ -92,18 +89,15 @@
               <form action="">
                 <p>Filter by quality</p>
                 <div class="inputs">
-                  <input type="checkbox" id="filtring-basic" name="filter-quality">
-                  <label for="filtring-basic">Basic</label>
+                  <button type="button" id="filtring-basic" name="filter-quality">Basic</button>
                 </div>
                 <div class="inputs">
-                  <input type="checkbox" id="filtring-premium" name="filter-quality">
-                  <label for="filtring-premium">Premium</label>
+                  <button type="button" id="filtring-premium" name="filter-quality">Premium</button>
                 </div>
               </form>
             </div>
             <div id="submit">
               <button type="button" id="clear">Clear</button>
-              <button type="button" id='submit-btn'>Submit Filters</button>
             </div>
         </aside>
         <main id="list">
@@ -127,6 +121,7 @@
             </div>
           </div>
           <div id="products"></div>
+          <h2 id="no-result">No results!</h2>
         </main>
       </section>
       <footer>

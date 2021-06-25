@@ -232,8 +232,6 @@ header {
                 padding: 10px;
                 width: 90%;
                 margin-bottom: 10px;
-                display: flex;
-                flex-direction: column;
                 
                 p{
                     font-family: $second-font;
@@ -243,6 +241,13 @@ header {
                     margin-bottom: 10px;
                     font-family: $second-font;
                     font-size: 16px;
+
+                    button{
+                        @include btn-list-page;
+                        background-color: transparent;
+                        margin-bottom: 10px;
+                        width: 100%;
+                    }
                 }
             }
 
@@ -253,7 +258,6 @@ header {
                     @include btn-list-page;
                     margin-bottom: 10px;
                     width: 100%;
-                    height: 50%;
                 }
             }
     }
@@ -324,6 +328,9 @@ header {
                     }
                 }                
             }
+        }
+        #no-result{
+            display: none;
         }
     }
 }

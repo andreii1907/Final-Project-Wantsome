@@ -9,7 +9,7 @@ const tshirtsModels = [
     {
         name: 'Polo White Rounded Singht',
         price: '49.99',
-        gender: 'female',
+        gender: 'women',
         quality: 'premium',
         url: 'https://cdn.shopify.com/s/files/1/0014/6217/3742/products/214916ZH-OPWH_1_1200x.jpg?v=1570024487'
     },
@@ -30,14 +30,14 @@ const tshirtsModels = [
     {
         name: 'Simple Basic Black USPA Denim',
         price: '35.99',
-        gender: 'female',
+        gender: 'women',
         quality: 'basic',
         url: 'https://cdn11.nnnow.com/web-images/large/styles/FC7NAVCJLDV/1584005032504/1.jpg'
     },
     {
         name: 'Simple Basic Blue USPA Denim',
         price: '39.99',
-        gender: 'female',
+        gender: 'women',
         quality: 'basic',
         url: 'https://cdn.shopify.com/s/files/1/0014/6217/3742/products/2149430H-EVBL_1_1200x.jpg?v=1570019785'
     },
@@ -51,7 +51,7 @@ const tshirtsModels = [
     {
         name: 'Basic Polo Navy',
         price: '39.99',
-        gender: 'female',
+        gender: 'women',
         quality: 'basic',
         url: 'https://cdn.shopify.com/s/files/1/0014/6217/3742/products/212678ZH-NVRD--0612_1200x.jpg?v=1598552957'
     },
@@ -72,14 +72,14 @@ const tshirtsModels = [
     {
         name: 'Simple Basic White USPA Denim',
         price: '39.99',
-        gender: 'female',
+        gender: 'women',
         quality: 'basic',
         url: 'https://cdn.shopify.com/s/files/1/0014/6217/3742/products/2151100H-OPWH_1_1600x.jpg?v=1581094303'
     },
     {
         name: 'Basic Polo Grey',
         price: '39.99',
-        gender: 'female',
+        gender: 'women',
         quality: 'basic',
         url: 'https://cdn.shopify.com/s/files/1/0014/6217/3742/products/21359000-HGRY_1_1200x.jpg?v=1576529891'
     },
@@ -100,7 +100,7 @@ const tshirtsModels = [
     {
         name: 'Basic Polo Navy USPA Denim',
         price: '59.99',
-        gender: 'female',
+        gender: 'women',
         quality: 'premium',
         url: 'https://cdn.shopify.com/s/files/1/0014/6217/3742/products/215186ZH-EVBL--5608_1200x.jpg?v=1600361327'
     },
@@ -121,21 +121,21 @@ const tshirtsModels = [
     {
         name: 'Basic Polo Green',
         price: '39.99',
-        gender: 'female',
+        gender: 'women',
         quality: 'basic',
         url: 'https://rukminim1.flixcart.com/image/714/857/jnj7iq80/t-shirt/z/c/c/s-uwts0734-u-s-polo-assn-original-imafa73ampygpa9y.jpeg?q=50'
     },
     {
         name: 'Simple Basic White',
         price: '35.99',
-        gender: 'female',
+        gender: 'women',
         quality: 'basic',
         url: 'https://cdn.shopify.com/s/files/1/0014/6217/3742/products/2149720H-OWCL_1_6cbd1739-ed52-43e1-b6d0-45abcd4f6b22_1200x.jpg?v=1598551476'
     },
     {
         name: 'Simple Basic Grey',
         price: '35.99',
-        gender: 'female',
+        gender: 'women',
         quality: 'basic',
         url: 'https://cdn.shopify.com/s/files/1/0014/6217/3742/products/212201PO-GRYP_1_11c57584-7af0-4e59-ab78-d9429d189527_1200x.jpg?v=1598555159'
     },
