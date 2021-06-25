@@ -150,10 +150,10 @@ function noResultView(){
     result ? noResult.style.display = 'block' : noResult.style.display = 'none';
 }
 
-function genderFilter(filter, gender){
+function genderAndQualityFilter(filter, prop, gender){
     filter.addEventListener('click', function(){
         filteredItems = currentStateView.filter((item) => {
-            return item.gender == gender;
+            return item[prop] == gender;
         })
         noResultView();
         generateView(filteredItems);
@@ -161,45 +161,10 @@ function genderFilter(filter, gender){
     })
 }
 
-function qualityFilter(filter, quality) {
-    filter.addEventListener('click', function(){
-        filteredItems = currentStateView.filter((item) => {
-            return item.quality == quality;
-        })
-        noResultView();
-        generateView(filteredItems);
-        currentStateView = filteredItems;
-    })
-}
-
-function priceFilter() {
+function priceFilter(prop, min, max) {
     filtringPriceOne.addEventListener('click', function(){
         filteredItems = currentStateView.filter((item) => {
-            return Number(item.price) < 29.99;
-        })
-        noResultView();
-        generateView(filteredItems);
-        currentStateView = filteredItems;
-    })
-    filtringPriceTwo.addEventListener('click', function(){
-        filteredItems = currentStateView.filter((item) => {
-            return Number(item.price) >= 29.99 && Number(item.price) <= 39.99;;
-        })
-        noResultView();
-        generateView(filteredItems);
-        currentStateView = filteredItems;
-    })
-    filtringPriceThree.addEventListener('click', function(){
-        filteredItems = currentStateView.filter((item) => {
-            return Number(item.price) > 39.99 && Number(item.price) <= 49.99;
-        })
-        noResultView();
-        generateView(filteredItems);
-        currentStateView = filteredItems;
-    })
-    filtringPriceFour.addEventListener('click', function(){
-        filteredItems = currentStateView.filter((item) => {
-            return Number(item.price) > 49.99 && Number(item.price) <= 59.99;
+            return Number(item[prop]) < min;
         })
         noResultView();
         generateView(filteredItems);
@@ -207,22 +172,36 @@ function priceFilter() {
     })
     filtringPriceFive.addEventListener('click', function(){
         filteredItems = currentStateView.filter((item) => {
-            return Number(item.price) > 59.99;
+            return Number(item[prop]) > max;
         })
         noResultView();
         generateView(filteredItems);
         currentStateView = filteredItems;
     })
+
+    function multiplePriceFilter (filter, priceOne, priceTwo){
+        filter.addEventListener('click', function(){
+            filteredItems = currentStateView.filter((item) => {
+                return Number(item[prop]) > priceOne && Number(item.price) <= priceTwo;
+            })
+            noResultView();
+            generateView(filteredItems);
+            currentStateView = filteredItems;
+        })
+    }
+    
+    multiplePriceFilter(filtringPriceTwo, 29.99, 39.99);
+    multiplePriceFilter(filtringPriceThree, 39.99, 49.99);
+    multiplePriceFilter(filtringPriceFour, 49.99, 59.99);
 }
 
 function checked(){
-    genderFilter(genderMale, 'male');
-    genderFilter(genderWomen, 'women');
-    qualityFilter(basic, 'basic');
-    qualityFilter(premium, 'premium');
-    priceFilter();
+    genderAndQualityFilter(genderMale, 'gender', 'male');
+    genderAndQualityFilter(genderWomen,'gender', 'women');
+    genderAndQualityFilter(basic, 'quality', 'basic');
+    genderAndQualityFilter(premium,'quality', 'premium');
+    priceFilter('price', 29.99, 59.99);
 } 
-
 checked();
 
 // Clear buttons // 
