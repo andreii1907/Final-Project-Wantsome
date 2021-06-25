@@ -129,7 +129,7 @@ upArrow.addEventListener("click", function(event){
     downArrow.style.display = 'block';
 });
 
-// Clear radio buttons // 
+// Clear buttons // 
 const clearBtn = document.getElementById('clear');
 
 clear.addEventListener('click', function(e){
