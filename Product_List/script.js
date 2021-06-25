@@ -129,18 +129,6 @@ upArrow.addEventListener("click", function(event){
     downArrow.style.display = 'block';
 });
 
-// Clear buttons // 
-const clearBtn = document.getElementById('clear');
-
-clear.addEventListener('click', function(e){
-    e.preventDefault();
-    const filtrationToClear = document.querySelectorAll('.inputs input');
-    for (let filter of filtrationToClear) {
-        filter.checked = false;
-    }
-    generateView(currentStateView);
-});
-
 // Filtring // 
 
 const fillteringSection = document.getElementById('filtering');
@@ -169,7 +157,7 @@ function genderFilter(filter, gender){
         })
         noResultView();
         generateView(filteredItems);
-        currentStateView = tshirtsModels;
+        currentStateView = filteredItems;
     })
 }
 
@@ -180,7 +168,7 @@ function qualityFilter(filter, quality) {
         })
         noResultView();
         generateView(filteredItems);
-        currentStateView = tshirtsModels;
+        currentStateView = filteredItems;
     })
 }
 
@@ -191,7 +179,7 @@ function priceFilter() {
         })
         noResultView();
         generateView(filteredItems);
-        currentStateView = tshirtsModels;
+        currentStateView = filteredItems;
     })
     filtringPriceTwo.addEventListener('click', function(){
         filteredItems = currentStateView.filter((item) => {
@@ -199,7 +187,7 @@ function priceFilter() {
         })
         noResultView();
         generateView(filteredItems);
-        currentStateView = tshirtsModels;
+        currentStateView = filteredItems;
     })
     filtringPriceThree.addEventListener('click', function(){
         filteredItems = currentStateView.filter((item) => {
@@ -207,7 +195,7 @@ function priceFilter() {
         })
         noResultView();
         generateView(filteredItems);
-        currentStateView = tshirtsModels;
+        currentStateView = filteredItems;
     })
     filtringPriceFour.addEventListener('click', function(){
         filteredItems = currentStateView.filter((item) => {
@@ -215,7 +203,7 @@ function priceFilter() {
         })
         noResultView();
         generateView(filteredItems);
-        currentStateView = tshirtsModels;
+        currentStateView = filteredItems;
     })
     filtringPriceFive.addEventListener('click', function(){
         filteredItems = currentStateView.filter((item) => {
@@ -223,7 +211,7 @@ function priceFilter() {
         })
         noResultView();
         generateView(filteredItems);
-        currentStateView = tshirtsModels;
+        currentStateView = filteredItems;
     })
 }
 
@@ -236,6 +224,30 @@ function checked(){
 } 
 
 checked();
+
+// Clear buttons // 
+const clearBtn = document.getElementById('clear');
+
+clear.addEventListener('click', function(e){
+    e.preventDefault();
+    currentStateView = tshirtsModels;
+    generateView(currentStateView);
+});
+
+// Search Part // 
+
+const search = document.querySelector('#search-bar input');
+const searchBtn = document.querySelector('#search-bar button');
+
+search.addEventListener('keyup', function(e) {
+    const searchString = e.target.value;
+    filteredItems = currentStateView.filter((item) => {
+        return item.name.toLowerCase().includes(searchString);
+    })
+    generateView(filteredItems);
+    noResultView();
+    currentStateView = tshirtsModels;
+});
 
 // Sort Part // 
 const items = document.querySelectorAll('.item');
