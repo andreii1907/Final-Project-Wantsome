@@ -4,7 +4,7 @@ let currentStateView = [];
 function generateView(models){
     currentStateView = models;
     productsList.innerHTML = '';
-    for (model of tshirtsModels){
+    for (model of models){
         const divProduct = document.createElement('div');
         divProduct.style.backgroundImage = 'url('+ model.url +')';
         productsList.appendChild(divProduct);
@@ -18,6 +18,7 @@ function generateView(models){
         const seeDetails = document.createElement('button');
         seeDetails.textContent = 'Details';
         divProduct.appendChild(seeDetails);
+        divProduct.classList.add('item', model.price, model.gender, model.quality); 
     }
     hoverEvent();
 }
@@ -41,7 +42,9 @@ function hoverEvent(){
         })
     }
 }
+
 generateView(tshirtsModels);
+
 
 // Cart Button // 
 
@@ -120,8 +123,8 @@ downArrow.addEventListener("click", function(event){
 
 upArrow.addEventListener("click", function(event){
     event.preventDefault();
-    mobileFilter.style.marginTop = '-700px';
-    list.style.marginTop = '170px';
+    mobileFilter.style.marginTop = '-800px';
+    list.style.marginTop = '100px';
     upArrow.style.display = 'none';
     downArrow.style.display = 'block';
 });
@@ -135,32 +138,125 @@ clear.addEventListener('click', function(e){
     for (let filter of filtrationToClear) {
         filter.checked = false;
     }
+    generateView(currentStateView);
 });
 
+// Filtring // 
+
+const fillteringSection = document.getElementById('filtering');
+const genderMale = document.getElementById('filtring-mens');
+const genderWomen = document.getElementById('filtring-womens');
+const basic = document.getElementById('filtring-basic');
+const premium = document.getElementById('filtring-premium');
+const filtringPriceOne = document.getElementById('filtring1');
+const filtringPriceTwo = document.getElementById('filtring2');
+const filtringPriceThree = document.getElementById('filtring3');
+const filtringPriceFour = document.getElementById('filtring4');
+const filtringPriceFive = document.getElementById('filtring5');
+const noResult = document.getElementById('no-result');
+
+let filteredItems = currentStateView;
+
+function noResultView(){
+    const result = filteredItems.length < 1;
+    result ? noResult.style.display = 'block' : noResult.style.display = 'none';
+}
+
+function genderFilter(filter, gender){
+    filter.addEventListener('click', function(){
+        filteredItems = currentStateView.filter((item) => {
+            return item.gender == gender;
+        })
+        noResultView();
+        generateView(filteredItems);
+        currentStateView = tshirtsModels;
+    })
+}
+
+function qualityFilter(filter, quality) {
+    filter.addEventListener('click', function(){
+        filteredItems = currentStateView.filter((item) => {
+            return item.quality == quality;
+        })
+        noResultView();
+        generateView(filteredItems);
+        currentStateView = tshirtsModels;
+    })
+}
+
+function priceFilter() {
+    filtringPriceOne.addEventListener('click', function(){
+        filteredItems = currentStateView.filter((item) => {
+            return Number(item.price) < 29.99;
+        })
+        noResultView();
+        generateView(filteredItems);
+        currentStateView = tshirtsModels;
+    })
+    filtringPriceTwo.addEventListener('click', function(){
+        filteredItems = currentStateView.filter((item) => {
+            return Number(item.price) >= 29.99 && Number(item.price) <= 39.99;;
+        })
+        noResultView();
+        generateView(filteredItems);
+        currentStateView = tshirtsModels;
+    })
+    filtringPriceThree.addEventListener('click', function(){
+        filteredItems = currentStateView.filter((item) => {
+            return Number(item.price) > 39.99 && Number(item.price) <= 49.99;
+        })
+        noResultView();
+        generateView(filteredItems);
+        currentStateView = tshirtsModels;
+    })
+    filtringPriceFour.addEventListener('click', function(){
+        filteredItems = currentStateView.filter((item) => {
+            return Number(item.price) > 49.99 && Number(item.price) <= 59.99;
+        })
+        noResultView();
+        generateView(filteredItems);
+        currentStateView = tshirtsModels;
+    })
+    filtringPriceFive.addEventListener('click', function(){
+        filteredItems = currentStateView.filter((item) => {
+            return Number(item.price) > 59.99;
+        })
+        noResultView();
+        generateView(filteredItems);
+        currentStateView = tshirtsModels;
+    })
+}
+
+function checked(){
+    genderFilter(genderMale, 'male');
+    genderFilter(genderWomen, 'women');
+    qualityFilter(basic, 'basic');
+    qualityFilter(premium, 'premium');
+    priceFilter();
+} 
+
+checked();
+
 // Sort Part // 
+const items = document.querySelectorAll('.item');
 const sortSelectByPrice = document.getElementById('sort1');
 
 sortSelectByPrice.addEventListener('change', function(e){
     if (e.target.value === "higher-price"){
-        currentStateView.sort((a, b) => (a.price > b.price) ? -1 : 1);
+        filteredItems.sort((a, b) => (a.price > b.price) ? -1 : 1);
     } else if (e.target.value === "lower-price") {
-        currentStateView.sort((a, b) => (a.price > b.price) ? 1 : -1);
+        filteredItems.sort((a, b) => (a.price > b.price) ? 1 : -1);
     } 
-    generateView(currentStateView);
+    generateView(filteredItems);
 });
 
 const sortSelectByName = document.getElementById('sort2');
 
 sortSelectByName.addEventListener('change', function(e){
     if (e.target.value === "A-Z"){
-        currentStateView.sort((a, b) => (a.name > b.name) ? 1 : -1);
+        filteredItems.sort((a, b) => (a.name > b.name) ? 1 : -1);
     } else if (e.target.value === "Z-A") {
-        currentStateView.sort((a, b) => (a.name > b.name) ? -1 : 1);
+        filteredItems.sort((a, b) => (a.name > b.name) ? -1 : 1);
     } 
-    generateView(currentStateView);
+    generateView(filteredItems);
 });
-
-// Filtring // 
-
-
-
